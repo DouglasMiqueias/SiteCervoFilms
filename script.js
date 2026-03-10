@@ -84,107 +84,110 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Team Slider
-let currentMember = 0;
-const teamMembers = document.querySelectorAll('.team-member');
-const totalMembers = teamMembers.length;
-const dots = document.querySelectorAll('.dot');
-const prevBtn = document.querySelector('.team-nav-btn.prev');
-const nextBtn = document.querySelector('.team-nav-btn.next');
-
-function showMember(index) {
-    // Hide all members
-    teamMembers.forEach(member => {
-        member.classList.remove('active');
-    });
-    
-    // Remove active from all dots
-    dots.forEach(dot => {
-        dot.classList.remove('active');
-    });
-    
-    // Show current member
-    teamMembers[index].classList.add('active');
-    dots[index].classList.add('active');
-    
-    currentMember = index;
-}
-
-function nextMember() {
-    currentMember = (currentMember + 1) % totalMembers;
-    showMember(currentMember);
-}
-
-function prevMember() {
-    currentMember = (currentMember - 1 + totalMembers) % totalMembers;
-    showMember(currentMember);
-}
-
-// Navigation buttons
-if (nextBtn) {
-    nextBtn.addEventListener('click', nextMember);
-}
-
-if (prevBtn) {
-    prevBtn.addEventListener('click', prevMember);
-}
-
-// Dot navigation
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        showMember(index);
-    });
-});
-
-// Auto-play (optional)
-let autoPlayInterval;
-
-function startAutoPlay() {
-    autoPlayInterval = setInterval(nextMember, 5000);
-}
-
-function stopAutoPlay() {
-    clearInterval(autoPlayInterval);
-}
-
-// Start auto-play
-startAutoPlay();
-
-// Stop auto-play on hover
 const teamSlider = document.querySelector('.team-slider');
 if (teamSlider) {
+    let currentMember = 0;
+    const teamMembers = document.querySelectorAll('.team-member');
+    const totalMembers = teamMembers.length;
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.team-nav-btn.prev');
+    const nextBtn = document.querySelector('.team-nav-btn.next');
+
+    function showMember(index) {
+        // Hide all members
+        teamMembers.forEach(member => {
+            member.classList.remove('active');
+        });
+
+        // Remove active from all dots
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+
+        // Show current member
+        if (teamMembers[index]) teamMembers[index].classList.add('active');
+        if (dots[index]) dots[index].classList.add('active');
+
+        currentMember = index;
+    }
+
+    function nextMember() {
+        if (!totalMembers) return;
+        currentMember = (currentMember + 1) % totalMembers;
+        showMember(currentMember);
+    }
+
+    function prevMember() {
+        if (!totalMembers) return;
+        currentMember = (currentMember - 1 + totalMembers) % totalMembers;
+        showMember(currentMember);
+    }
+
+    // Navigation buttons
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextMember);
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevMember);
+    }
+
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showMember(index);
+        });
+    });
+
+    // Auto-play (optional)
+    let autoPlayInterval;
+
+    function startAutoPlay() {
+        if (!totalMembers) return;
+        autoPlayInterval = setInterval(nextMember, 5000);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Start auto-play
+    startAutoPlay();
+
+    // Stop auto-play on hover
     teamSlider.addEventListener('mouseenter', stopAutoPlay);
     teamSlider.addEventListener('mouseleave', startAutoPlay);
-}
 
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-        prevMember();
-        stopAutoPlay();
-    } else if (e.key === 'ArrowRight') {
-        nextMember();
-        stopAutoPlay();
-    }
-});
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevMember();
+            stopAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            nextMember();
+            stopAutoPlay();
+        }
+    });
 
-// Touch/swipe support
-let touchStartX = 0;
-let touchEndX = 0;
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-teamSlider.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
+    teamSlider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
 
-teamSlider.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
+    teamSlider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
 
-function handleSwipe() {
-    if (touchEndX < touchStartX - 50) {
-        nextMember();
-    } else if (touchEndX > touchStartX + 50) {
-        prevMember();
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            nextMember();
+        } else if (touchEndX > touchStartX + 50) {
+            prevMember();
+        }
     }
 }
 
@@ -334,3 +337,68 @@ document.head.appendChild(style);
 // Console branding
 console.log('%c🦌 Cervo Films', 'font-size: 20px; font-weight: bold; color: #ffffff;');
 console.log('%cTransformamos eventos em experiências cinematográficas', 'font-size: 14px; color: #666;');
+
+/* SERVICES - EXPANSÃO POR CLIQUE (TOGGLE) */
+const servicesGrid = document.querySelector('.services-grid');
+const serviceCards = document.querySelectorAll('.service-card');
+
+const servicesState = {
+    activeCard: null
+};
+
+function setActiveServiceCard(card) {
+    serviceCards.forEach(c => {
+        c.classList.remove('active', 'expanded');
+        c.setAttribute('aria-expanded', 'false');
+    });
+    servicesGrid?.classList.remove('has-active');
+
+    if (!card) {
+        servicesState.activeCard = null;
+        return;
+    }
+
+    card.classList.add('active', 'expanded');
+    card.setAttribute('aria-expanded', 'true');
+    servicesGrid?.classList.add('has-active');
+    servicesState.activeCard = card;
+
+    // Acessibilidade
+    card.focus();
+}
+
+function toggleServiceCard(card) {
+    if (servicesState.activeCard === card) {
+        setActiveServiceCard(null);
+    } else {
+        setActiveServiceCard(card);
+    }
+}
+
+// Clique para expandir/colapsar (event delegation)
+servicesGrid?.addEventListener('click', (e) => {
+    const card = e.target.closest?.('.service-card');
+    if (!card || !servicesGrid.contains(card)) return;
+    toggleServiceCard(card);
+});
+
+// Teclado: Enter/Space expande, ESC fecha
+serviceCards.forEach(card => {
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleServiceCard(card);
+        }
+        if (e.key === 'Escape') {
+            setActiveServiceCard(null);
+        }
+    });
+});
+
+// Clicar fora fecha
+document.addEventListener('click', (e) => {
+    if (!servicesGrid) return;
+    if (!servicesGrid.contains(e.target)) {
+        setActiveServiceCard(null);
+    }
+});
