@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Cervo Films</title>
+    <meta name="description" content="Entre em contato com a Cervo Films. Transformamos eventos em experiências cinematográficas.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="assets/logo/logo-cervoFilms.svg" alt="">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">SOBRE</a></li>
+                    <li><a href="index.html#services" class="nav-link">SERVIÇOS</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">PORTFÓLIO</a></li>
+                    <li><a href="contato.html" class="nav-link">CONTATO</a></li>
+                </ul>
+                <div class="nav-contact">
+                    <a href="contato.html" class="btn-contact">FALE CONOSCO</a>
+                </div>
+                <button class="nav-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-header">
+                    <span class="contact-label">CONTATO</span>
+                    <h1 class="contact-title">Inicie seu Projeto</h1>
+                    <p class="contact-subtitle">Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas.</p>
+                </div>
+                
+                <form class="contact-form-new">
+                    <div class="form-row">
+                        <div class="form-group-new">
+                            <label for="name">NOME COMPLETO</label>
+                            <input type="text" id="name" name="name" placeholder="Ex: João Silva" required>
+                        </div>
+                        <div class="form-group-new">
+                            <label for="email">E-MAIL</label>
+                            <input type="email" id="email" name="email" placeholder="Ex: joao@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group-new">
+                        <label for="phone">TELEFONE / WHATSAPP</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Ex: (11) 99999-9999">
+                    </div>
+                    
+                    <div class="form-group-new">
+                        <label for="message">MENSAGEM</label>
+                        <textarea id="message" name="message" placeholder="Digite sua mensagem aqui..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-contact-submit">ENVIAR</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>CERVO<span>FILMS</span></h3>
+                    <p>Transformamos eventos em experiências cinematográficas.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>contato@cervofilms.com</p>
+                    <p>+55 XX XXXXX-XXXX</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/cervofilms/" aria-label="Instagram">@cervofilms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cervo Films. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
