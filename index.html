@@ -13,87 +13,49 @@
 <body>
     <!-- Navigation -->
     <header class="header">
-        <nav class="nav-container" role="navigation" aria-label="Navegação principal">
-                <div class="nav-brand">
-                    <a href="#hero" class="brand-link" aria-label="Cervo Films - Início">
-                        <img src="assets/logo/Logo-CervoFilms-BGTransp.png" alt="Cervo Films Logo" class="brand-logo">
-                    </a>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="assets/logo/logo-cervoFilms.svg" alt="">
                 </div>
-                
-                <div class="nav-center">
-                    <ul class="nav-menu" role="menubar">
-                        <li class="nav-item" role="none">
-                            <a href="#about" class="nav-link" role="menuitem">Sobre</a>
-                        </li>
-                        <li class="nav-item" role="none">
-                            <a href="#portfolio" class="nav-link" role="menuitem">Portfólio</a>
-                        </li>
-                        <li class="nav-item" role="none">
-                            <a href="#social-proof" class="nav-link" role="menuitem">Depoimentos</a>
-                        </li>
-                        <li class="nav-item" role="none">
-                            <a href="#contact" class="nav-link" role="menuitem">Contato</a>
-                        </li>
-                    </ul>
+                <ul class="nav-menu">
+                    <li><a href="#about" class="nav-link">SOBRE</a></li>
+                    <li><a href="#services" class="nav-link">SERVIÇOS</a></li>
+                    <li><a href="#portfolio" class="nav-link">PORTFÓLIO</a></li>
+                    <li><a href="#contact" class="nav-link">CONTATO</a></li>
+                </ul>
+                <div class="nav-contact">
+                    <a href="#contact" class="btn-contact">FALE CONOSCO</a>
                 </div>
-                
-                <div class="nav-cta">
-                    <a href="#contact" class="btn btn-primary nav-cta-btn">Fale Conosco</a>
-                </div>
-                
-                <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                <button class="nav-toggle" aria-label="Menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-            </nav>
+            </div>
+        </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="hero" role="banner">
-            <!-- Background Video -->
-            <div class="video-background">
-                <iframe 
-                    width="560" 
-                    height="315" 
-                    src="https://www.youtube.com/embed/_7cbm4BsVOM?si=L3CnTTL4Q6BsPeuM&controls=0&autoplay=1&mute=1&loop=1&playlist=_7cbm4BsVOM" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen
-                    class="video-iframe">
-                </iframe>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Transformamos Eventos em<br>
+                    <span>Experiências Cinematográficas</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Criatividade, posicionamento e qualidade para eventos e marcas.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn-hero-primary">VER PORTFÓLIO</a>
+                    <a href="#contact" class="btn-hero-secondary">SOLICITAR ORÇAMENTO</a>
+                </div>
             </div>
-            
-            <!-- Video Overlay -->
-            <div class="video-overlay"></div>
-            
-            <!-- Hero Content -->
-            <div class="container hero-content">
-                <!-- Efeito REC no canto superior direito -->
-                <div class="rec-indicator">
-                    <div class="rec-dot"></div>
-                    <div class="rec-text">REC</div>
-                </div>
-                
-                <div class="hero-text">
-                    <!-- Logo da Cervo Films acima do texto -->
-                    <div class="hero-logo">
-                        <img src="assets/logo/Logo-CervoFilms-BGTransp.png" alt="Cervo Films Logo" class="hero-logo-img">
-                    </div>
-                    <p class="hero-label">PRODUÇÃO AUDIOVISUAL</p>
-                    <h1 class="hero-title">
-                        <span class="title-line">TRANSFORMAMOS EVENTOS EM</span>
-                        <span class="title-line">EXPERIÊNCIAS CINEMATOGRÁFICAS</span>
-                    </h1>
-                    <p class="hero-subtitle">Criatividade, agilidade e qualidade premium para eventos e marcas.</p>
-                    <div class="hero-buttons">
-                        <a href="#portfolio" class="btn btn-primary" aria-label="Ver nosso portfólio">Ver Portfólio</a>
-                        <a href="#contact" class="btn btn-secondary" aria-label="Fale conosco">Fale Conosco</a>
-                    </div>
-                </div>
+            <div class="scroll-indicator">
+                <span class="scroll-text">SCROLL</span>
+                <div class="scroll-arrow"></div>
             </div>
         </section>
 
@@ -108,11 +70,11 @@
                             regional. Mais do que registrar eventos, construímos narrativas que transformam momentos comuns em experiências 
                             cinematográficas memoráveis.
                         </p>
-                        <p class="about-description">
+                        <P class="about-description">
                             Unimos direção criativa, visão estratégica e agilidade de execução para entregar conteúdos com alto
                             padrão técnico e estética refinada. Cada projeto é tratado como único — pensado, planejado e
                              executado para gerar impacto real, fortalecer marcas e eternizar histórias.
-                        </p>
+                        </P>
                         <p class="about-description">
                             Nosso compromisso não é apenas com a imagem, mas com a percepção. Criamos conteúdos que 
                             posicionam, conectam e permanecem.
@@ -137,204 +99,277 @@
             </div>
         </section>
 
-        <!-- Cinema Film Strip -->
-        <section class="cinema-strip">
-            <div class="clapper-board">
-                <div class="clapper-top">
-                    <div class="clapper-lines"></div>
-                </div>
-                <div class="clapper-bottom">
-                    <span class="clapper-text">CERVO FILMS</span>
-                    <span class="clapper-scene">SCENE 1</span>
-                    <span class="clapper-take">TAKE 1</span>
-                </div>
-            </div>
-            <div class="film-track">
-                <div class="film-content">
-                    <div class="film-item">CINEMATOGRAPHY</div>
-                    <div class="film-item">PRODUCTION</div>
-                    <div class="film-item">STORYTELLING</div>
-                    <div class="film-item">EVENTS</div>
-                    <div class="film-item">CREATIVITY</div>
-                    <div class="film-item">CINEMATOGRAPHY</div>
-                    <div class="film-item">PRODUCTION</div>
-                    <div class="film-item">STORYTELLING</div>
-                    <div class="film-item">EVENTS</div>
-                    <div class="film-item">CREATIVITY</div>
-                </div>
-                <div class="film-content" aria-hidden="true">
-                    <div class="film-item">CINEMATOGRAPHY</div>
-                    <div class="film-item">PRODUCTION</div>
-                    <div class="film-item">STORYTELLING</div>
-                    <div class="film-item">EVENTS</div>
-                    <div class="film-item">CREATIVITY</div>
-                    <div class="film-item">CINEMATOGRAPHY</div>
-                    <div class="film-item">PRODUCTION</div>
-                    <div class="film-item">STORYTELLING</div>
-                    <div class="film-item">EVENTS</div>
-                    <div class="film-item">CREATIVITY</div>
-                </div>
-            </div>
-        </section>
-
         <!-- Services Section -->
-        <section id="services" class="services" aria-labelledby="services-title">
+        <section id="services" class="services">
             <div class="container">
-                <h2 id="services-title" class="section-title">Nossos Serviços</h2>
-                <div class="services-grid" role="list">
-                    <article class="service-card" data-service="eventos" role="listitem" tabindex="0" aria-expanded="false" aria-label="Serviço de Produção de Eventos">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <div class="services-grid">
+                    <div class="service-card" data-service="eventos">
                         <div class="service-card-content">
-                            <div class="service-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-                                    <line x1="7" y1="2" x2="7" y2="22"></line>
-                                    <line x1="17" y1="2" x2="17" y2="22"></line>
-                                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                                    <line x1="2" y1="7" x2="7" y2="7"></line>
-                                    <line x1="2" y1="17" x2="7" y2="17"></line>
-                                    <line x1="17" y1="17" x2="22" y2="17"></line>
-                                    <line x1="17" y1="7" x2="22" y2="7"></line>
-                                </svg>
-                            </div>
-                            <h3 class="service-title">Produção de Eventos</h3>
-                            <p class="service-description">
-                                Cobertura completa com Real Time, After Movie e Stories dinâmicos.
-                                Capturamos cada momento com olhar cinematográfico.
-                            </p>
-                            <ul class="service-preview" aria-hidden="true">
-                                <li>Captação multicâmera</li>
-                                <li>Entrega em tempo real</li>
-                                <li>After Movie cinematográfico</li>
-                            </ul>
-                            <div class="service-expanded-content">
+                            
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                                <line x1="7" y1="2" x2="7" y2="22"></line>
+                                <line x1="17" y1="2" x2="17" y2="22"></line>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <line x1="2" y1="7" x2="7" y2="7"></line>
+                                <line x1="2" y1="17" x2="7" y2="17"></line>
+                                <line x1="17" y1="17" x2="22" y2="17"></line>
+                                <line x1="17" y1="7" x2="22" y2="7"></line>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Produção de Eventos</h3>
+                        <p class="service-description">
+                            Cobertura completa com Real Time, After Movie e Stories dinâmicos. 
+                            Capturamos cada momento com olhar cinematográfico.
+                        </p>
+                           <div class="service-expanded-content">
+
                                 <div class="service-features">
+
                                     <h4>O que inclui</h4>
+
                                     <ul>
                                         <li>Captação multicâmera</li>
                                         <li>Entrega de stories em tempo real</li>
                                         <li>After Movie cinematográfico</li>
                                         <li>Edição profissional e color grading</li>
                                     </ul>
+
                                 </div>
+
+                              
+
                                 <div class="service-differentials">
+
                                     <h4>Diferenciais</h4>
+
                                     <ul>
                                         <li>Equipe ágil e direção criativa</li>
                                         <li>Entrega rápida para redes sociais</li>
                                         <li>Qualidade cinematográfica</li>
                                         <li>Planejamento estratégico do conteúdo</li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="containerVideo">
-                            <img src="assets/services/producao-eventos.jpg" alt="Produção de eventos cinematográfica pela Cervo Films" loading="lazy">
-                        </div>
-                    </article>
 
-                    <article class="service-card" data-service="foto" role="listitem" tabindex="0" aria-expanded="false" aria-label="Serviço de Fotografia e Conteúdo">
-                        <div class="service-card-content">
-                            <div class="service-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="12" cy="8" r="1"></circle>
-                                    <path d="M9 13l3 3 5-5"></path>
-                                </svg>
-                            </div>
-                            <h3 class="service-title">Fotografia e Conteúdo</h3>
-                            <p class="service-description">
-                                Fotos profissionais e posts com design estratégico.
-                                Conteúdo visual que eleva sua marca nas redes sociais.
-                            </p>
-                            <ul class="service-preview" aria-hidden="true">
-                                <li>Sessão fotográfica profissional</li>
-                                <li>Edição e retoque</li>
-                                <li>Posts para redes sociais</li>
-                            </ul>
-                            <div class="service-expanded-content">
-                                <div class="service-features">
-                                    <h4>O que inclui</h4>
-                                    <ul>
-                                        <li>Sessão fotográfica profissional</li>
-                                        <li>Edição de imagens e retoque</li>
-                                        <li>Criação de posts para redes sociais</li>
-                                        <li>Entrega em alta resolução</li>
-                                    </ul>
                                 </div>
-                                <div class="service-differentials">
-                                    <h4>Diferenciais</h4>
-                                    <ul>
-                                        <li>Estúdio móvel equipado</li>
-                                        <li>Lighting profissional</li>
-                                        <li>Edição em tempo real</li>
-                                        <li>Biblioteca de poses e conceitos</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="containerVideo">
-                            <img src="assets/services/fotografia-conteudo.jpg" alt="Sessão fotográfica profissional pela Cervo Films" loading="lazy">
-                        </div>
-                    </article>
 
-                    <article class="service-card" data-service="corp" role="listitem" tabindex="0" aria-expanded="false" aria-label="Serviço Corporativo">
+                            </div>
+                        </div>
+                         <div class="containerVideo">
+                            <img src="assets/team/Thiago-Sodre.JPG" alt="jj">
+                        </div>
+                        
+                    </div>
+
+                      <div class="service-card" data-service="foto">
                         <div class="service-card-content">
-                            <div class="service-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                                </svg>
-                            </div>
-                            <h3 class="service-title">Corporativo</h3>
-                            <p class="service-description">
-                                Vídeos institucionais, comerciais e conteúdo estratégico.
-                                Comunicação visual que conecta marcas e resultados.
-                            </p>
-                            <ul class="service-preview" aria-hidden="true">
-                                <li>Vídeos institucionais</li>
-                                <li>Comerciais para internet/TV</li>
-                                <li>Motion graphics</li>
-                            </ul>
-                            <div class="service-expanded-content">
+                            
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Fotografia e Conteúdo</h3>
+                        <p class="service-description">
+                            Fotos profissionais e posts com design estratégico. 
+                            Conteúdo visual que eleva sua marca nas redes sociais.
+                        </p>
+                           <div class="service-expanded-content">
+
                                 <div class="service-features">
+
                                     <h4>O que inclui</h4>
+
                                     <ul>
-                                        <li>Vídeos institucionais e corporativos</li>
-                                        <li>Comerciais para TV e internet</li>
-                                        <li>Depoimentos de clientes</li>
-                                        <li>Motion graphics e animações</li>
+                                        <li>Captação multicâmera</li>
+                                        <li>Entrega de stories em tempo real</li>
+                                        <li>After Movie cinematográfico</li>
+                                        <li>Edição profissional e color grading</li>
                                     </ul>
+
                                 </div>
+
+                              
+
                                 <div class="service-differentials">
+
                                     <h4>Diferenciais</h4>
+
                                     <ul>
-                                        <li>Roteiro cinematográfico</li>
-                                        <li>Localidades e cenários personalizados</li>
-                                        <li>Atores profissionais</li>
-                                        <li>Trilha sonora original</li>
+                                        <li>Equipe ágil e direção criativa</li>
+                                        <li>Entrega rápida para redes sociais</li>
+                                        <li>Qualidade cinematográfica</li>
+                                        <li>Planejamento estratégico do conteúdo</li>
                                     </ul>
+
                                 </div>
+
                             </div>
                         </div>
-                        <div class="containerVideo">
-                            <img src="assets/services/corporativo.jpg" alt="Produção de vídeo corporativo pela Cervo Films" loading="lazy">
+                         <div class="containerVideo">
+                            <img src="assets/team/Thiago-Sodre.JPG" alt="jj">
                         </div>
-                    </article>
+                        
+                    </div>
+
+                    <div class="service-card" data-service="corp">
+                        <div class="service-card-content">
+                            
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Corporativo</h3>
+                        <p class="service-description">
+                            Vídeos institucionais, comerciais e conteúdo estratégico. 
+                            Comunicação visual que conecta marcas e resultados.
+                        </p>
+                           <div class="service-expanded-content">
+
+                                <div class="service-features">
+
+                                    <h4>O que inclui</h4>
+
+                                    <ul>
+                                        <li>Captação multicâmera</li>
+                                        <li>Entrega de stories em tempo real</li>
+                                        <li>After Movie cinematográfico</li>
+                                        <li>Edição profissional e color grading</li>
+                                    </ul>
+
+                                </div>
+
+                              
+
+                                <div class="service-differentials">
+
+                                    <h4>Diferenciais</h4>
+
+                                    <ul>
+                                        <li>Equipe ágil e direção criativa</li>
+                                        <li>Entrega rápida para redes sociais</li>
+                                        <li>Qualidade cinematográfica</li>
+                                        <li>Planejamento estratégico do conteúdo</li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+                         <div class="containerVideo">
+                            <img src="assets/team/Thiago-Sodre.JPG" alt="jj">
+                        </div>
+                        
+                    </div>
                 </div>
+                   
             </div>
         </section>
+
+        
 
         <!-- Team Section -->
         <section id="team" class="team">
             <div class="container">
                 <h2 class="section-title">Nossa Equipe</h2>
-            </div>
-            <div class="team-grid">
-                <img src="assets/team/Thiago-Sodre.JPG" alt="Thiago Sodré" class="team-item" loading="lazy">
-                <img src="assets/team/Walisson-Nobre.JPG" alt="Walisson Nobre" class="team-item" loading="lazy">
-                <img src="assets/team/Wendel-Henrique.JPEG" alt="Wendel Henrique" class="team-item" loading="lazy">
-                <img src="assets/team/Katlen-Cruz.JPEG" alt="Katlen Cruz" class="team-item" loading="lazy">
-                <img src="assets/team/Thales-Borges.JPG" alt="Thales Borges" class="team-item" loading="lazy">
-                <img src="assets/team/Raiane-Rocha.jpg" alt="Raiane Rocha" class="team-item" loading="lazy">
+                <div class="team-slider">
+                    <div class="team-member active">
+                        <div class="team-photo">
+                            <img src="assets/team/Thiago-Sodre.JPG" alt="Thiago Sodré" class="member-photo">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="member-name">Thiago Sodré</h3>
+                            <p class="member-role">Gestor</p>
+                            <p class="member-description">Liderança estratégica e visão cinematográfica para cada projeto. Responsável por transformar ideias em experiências audiovisuais memoráveis, coordenando toda a equipe com excelência e criatividade.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="assets/team/Walisson-Nobre.JPG" alt="Walisson Nobre" class="member-photo">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="member-name">Walisson Nobre</h3>
+                            <p class="member-role">Fotógrafo</p>
+                            <p class="member-description">Captura momentos únicos com olhar artístico e técnico. Especialista em registrar a essência de cada evento com composição perfeita e sensibilidade visual.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="assets/team/Wendel-Henrique.JPEG" alt="Wendel Henrique" class="member-photo">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="member-name">Wendel Henrique</h3>
+                            <p class="member-role">Editor</p>
+                            <p class="member-description">Transforma footage bruto em cinema emocionante. Mestre em pós-produção, criando narrativas visuais que envolvem e cativam o público.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="assets/team/Katlen-Cruz.JPEG" alt="Katlen Cruz" class="member-photo">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="member-name">Katlen Cruz</h3>
+                            <p class="member-role">Filmmaker</p>
+                            <p class="member-description">Direção criativa e narrativa visual impactante. Visionária que transforma conceitos em produções cinematográficas autênticas e poderosas.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="assets/team/Thales-Borges.JPG" alt="Thales Borges" class="member-photo">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="member-name">Thales Borges</h3>
+                            <p class="member-role">Filmmaker e Editor</p>
+                            <p class="member-description">Dupla habilidade: captura e pós-produção cinematográfica. Profissional completo que domina desde a gravação até a edição final.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="assets/team/Raiane-Rocha.jpg" alt="Raiane Rocha" class="member-photo">
+                        </div>
+                        <div class="team-info">
+                            <h3 class="member-name">Raiane Rocha</h3>
+                            <p class="member-role">Social Media</p>
+                            <p class="member-description">Estratégia digital e conteúdo para redes sociais. Especialista em ampliar o alcance das produções e engajar audiências online.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="navigation" >
+                     <div class="team-navigation">
+                    <button class="team-nav-btn prev" aria-label="Anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="team-nav-btn next" aria-label="Próximo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="team-dots">
+                    <span class="dot active" data-member="0"></span>
+                    <span class="dot" data-member="1"></span>
+                    <span class="dot" data-member="2"></span>
+                    <span class="dot" data-member="3"></span>
+                    <span class="dot" data-member="4"></span>
+                    <span class="dot" data-member="5"></span>
+                </div>
+                </div>
+                
+                
             </div>
         </section>
 
@@ -389,11 +424,11 @@
                 <h2 class="section-title">Portfólio</h2>
             </div>
             <div class="portfolio-grid">
-                <img src="https://pub-e5ab79f76e6e4c32841ea6868cfdb1bd.r2.dev/Dj.JPG" alt="Evento Itaú" class="portfolio-item">
-                <img src="https://pub-e5ab79f76e6e4c32841ea6868cfdb1bd.r2.dev/Hungria.JPG" alt="Show Musical" class="portfolio-item">
-                <img src="https://pub-e5ab79f76e6e4c32841ea6868cfdb1bd.r2.dev/Pagode.JPG" alt="Evento Vogue" class="portfolio-item">
-                <img src="https://pub-e5ab79f76e6e4c32841ea6868cfdb1bd.r2.dev/VovoJames.png" alt="Público em Show Noturno" class="portfolio-item">
-                <img src="https://pub-e5ab79f76e6e4c32841ea6868cfdb1bd.r2.dev/Beats.png" alt="Instalação de Arte Digital" class="portfolio-item">
+                <img src="assets/portfolio/Dj.JPG" alt="Evento Itaú" class="portfolio-item">
+                <img src="assets/portfolio/Hungria.JPG" alt="Show Musical" class="portfolio-item">
+                <img src="assets/portfolio/Pagode.JPG" alt="Evento Vogue" class="portfolio-item">
+                <img src="assets/portfolio/VovoJames.png" alt="Público em Show Noturno" class="portfolio-item">
+                <img src="assets/portfolio/Beats.png" alt="Instalação de Arte Digital" class="portfolio-item">
             </div>
         </section>
 
@@ -404,103 +439,26 @@
                     <div class="clients-logos">
                         <h3>Clientes que confiam em nosso trabalho</h3>
                         <div class="logos-grid">
-                            <img src="assets/Logos-Parceiros-Cervo/O-boticario-logo.png" alt="O Boticário" loading="lazy" class="partner-logo partner-logo--boticario">
-                            <img src="assets/Logos-Parceiros-Cervo/Sebrea-logo.png" alt="Sebrae" loading="lazy" class="partner-logo">
-                            <img src="assets/Logos-Parceiros-Cervo/hering-logo.png" alt="Hering" loading="lazy" class="partner-logo">
-                            <img src="assets/Logos-Parceiros-Cervo/Flor-do-cafe-logo.PNG" alt="Flor do Café" loading="lazy" class="partner-logo">
-                            <img src="assets/Logos-Parceiros-Cervo/Difusora98-Logo.png" alt="Difusora 98" loading="lazy" class="partner-logo">
-                            <img src="assets/Logos-Parceiros-Cervo/CaminhosCerrado-logo.png" alt="Caminhos do Cerrado" loading="lazy" class="partner-logo">
-                            <img src="assets/Logos-Parceiros-Cervo/farmacianacional_logo.png" alt="Farmácia Nacional" loading="lazy" class="partner-logo">
-                            <img src="assets/Logos-Parceiros-Cervo/Saroba-truck.png" alt="Sarobá" loading="lazy" class="partner-logo">
+                            <div class="logo-placeholder">Logo Cliente 1</div>
+                            <div class="logo-placeholder">Logo Cliente 2</div>
+                            <div class="logo-placeholder">Logo Cliente 3</div>
+                            <div class="logo-placeholder">Logo Cliente 4</div>
                         </div>
                     </div>
 
-                    <div class="rv">
-                        <h3 class="rv__title">O Que Dizem Nossos Clientes</h3>
-                        <div class="rv__carousel" id="reviewsCarousel">
-                            <button class="rv__arrow rv__arrow--prev" aria-label="Anterior">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                            </button>
-                            <div class="rv__viewport">
-                                <div class="rv__track" id="reviewsTrack">
+                    <div class="testimonials">
+                        <div class="testimonial">
+                            <blockquote>
+                                "Profissionalismo excepcional e qualidade cinematográfica. Superaram todas as expectativas."
+                            </blockquote>
+                            <cite>– Diretor de Marketing, Empresa Premium</cite>
+                        </div>
 
-                                    <div class="rv__card">
-                                        <div class="rv__stars">
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        </div>
-                                        <blockquote class="rv__text">"Profissionalismo excepcional e qualidade cinematográfica. Superaram todas as expectativas do nosso projeto."</blockquote>
-                                        <div class="rv__author">
-                                            <img src="assets/team/Thiago-Sodre.JPG" alt="Flor do Café" class="rv__avatar" loading="lazy">
-                                            <div class="rv__info">
-                                                <span class="rv__name">Flor do Café</span>
-                                                <span class="rv__role">Marca Parceira</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="rv__card">
-                                        <div class="rv__stars">
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        </div>
-                                        <blockquote class="rv__text">"Parabéns pela qualidade e pela entrega que vocês fazem. Meus alcances aumentaram muitos % depois que fechei com vocês. O nível profissional e a atenção aos detalhes fazem toda diferença no resultado final!"</blockquote>
-                                        <div class="rv__author">
-                                            <img src="assets/team/Walisson-Nobre.JPG" alt="DJ DUSHY" class="rv__avatar" loading="lazy">
-                                            <div class="rv__info">
-                                                <span class="rv__name">DJ DUSHY</span>
-                                                <span class="rv__role">Artista Musical</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="rv__card">
-                                        <div class="rv__stars">
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        </div>
-                                        <blockquote class="rv__text">"Trabalho diferenciado demais. Qualidade, criatividade e profissionalismo em cada foto. Quem contratar não vai se arrepender, serviço top. Recomendo demais!"</blockquote>
-                                        <div class="rv__author">
-                                            <img src="assets/team/Walisson-Nobre.JPG" alt="Thiago Camargo" class="rv__avatar" loading="lazy">
-                                            <div class="rv__info">
-                                                <span class="rv__name">Thiago Camargo</span>
-                                                <span class="rv__role">Organizador da Saroba Truck</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="rv__card">
-                                        <div class="rv__stars">
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        </div>
-                                        <blockquote class="rv__text">"Trabalhar com essa equipe foi uma experiência incrível. Ficou claro o cuidado e o profissionalismo em cada detalhe. Captaram a essência do nosso trabalho. O resultado superou nossas expectativas. Recomendo de olhos fechados."</blockquote>
-                                        <div class="rv__author">
-                                            <img src="assets/team/Walisson-Nobre.JPG" alt="Chef Gabi Tropicana" class="rv__avatar" loading="lazy">
-                                            <div class="rv__info">
-                                                <span class="rv__name">Chef Gabi Tropicana</span>
-                                                <span class="rv__role">Embaixadora da Gastronomia do Cerrado</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <button class="rv__arrow rv__arrow--next" aria-label="Próximo">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                            </button>
+                        <div class="testimonial">
+                            <blockquote>
+                                "Agilidade na entrega sem perder a qualidade. Nossos eventos nunca tiveram uma cobertura tão profissional."
+                            </blockquote>
+                            <cite>– Produtora de Eventos</cite>
                         </div>
                     </div>
 
@@ -541,7 +499,7 @@
                             Falar no WhatsApp
                         </a>
 
-                        <a href="contato.html" class="cta-btn cta-btn-secondary">
+                        <a href="mailto:contato@cervofilms.com" class="cta-btn cta-btn-secondary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16v16H4z" />
                                 <path d="m22 6-10 7L2 6" />
@@ -557,7 +515,7 @@
                             </svg>
                             (11) 99999-9999
                         </a>
-                        <a href="contato.html" class="cta-footer-item" aria-label="E-mail">
+                        <a href="mailto:contato@cervofilms.com" class="cta-footer-item" aria-label="E-mail">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16v16H4z" />
                                 <path d="m22 6-10 7L2 6" />
@@ -604,35 +562,6 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-    
-    <!-- Navbar Scroll Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('.header');
-            const hero = document.querySelector('.hero');
-            
-            // Mostrar navbar quando rolar para baixo da hero section
-            function handleScroll() {
-                const heroHeight = hero.offsetHeight;
-                const scrollPosition = window.scrollY;
-                
-                if (scrollPosition > heroHeight * 0.8) {
-                    header.classList.remove('hidden');
-                    header.classList.add('visible');
-                } else {
-                    header.classList.remove('visible');
-                    header.classList.add('hidden');
-                }
-            }
-            
-            // Verificar scroll inicial
-            handleScroll();
-            
-            // Adicionar listener de scroll
-            window.addEventListener('scroll', handleScroll);
-        });
-    </script>
 </body>
 </html>
