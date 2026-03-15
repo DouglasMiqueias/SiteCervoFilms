@@ -147,8 +147,19 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1000;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--color-border-soft);
-    transition: all var(--transition-medium);
+    transition: all 0.3s ease;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.header.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.header.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
 }
 
 .nav-container {
@@ -156,15 +167,141 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     padding: 0 var(--spacing-md);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 80px;
+    position: relative;
+}
 
+/* Logo Brand - posicionado corretamente */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 260px;
+    z-index: 3;
+}
+
+/* Container central para o menu - ocupa todo o centro */
+.nav-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+/* Efeito REC no canto superior direito da hero */
+.rec-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1000;
+    animation: recBlink 1.5s ease-in-out infinite;
+}
+
+.rec-dot {
+    width: 14px;
+    height: 14px;
+    background: #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+    animation: recPulse 1s ease-in-out infinite;
+}
+
+.rec-text {
+    color: #ff0000;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    animation: recTextGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes recBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes recPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes recTextGlow {
+    0%, 100% { 
+        text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+    }
+    50% { 
+        text-shadow: 0 0 15px rgba(255, 0, 0, 1);
+    }
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all var(--transition-medium);
+}
+
+.brand-logo {
+    height: 60px;
+    width: auto;
+    transition: all var(--transition-medium);
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+}
+
+.brand-link:hover .brand-logo {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Ajuste do menu para centralizar perfeitamente */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+}
+
+/* Botão CTA à direita */
+.nav-cta {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+}
+
+.nav-cta-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all var(--transition-medium);
+    border-radius: var(--border-radius-sm);
 }
 
 .logo {
     flex: 1;
 }
+
 .logo img{
     width: 8rem;
 }
@@ -270,6 +407,11 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     cursor: pointer;
     padding: 5px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .nav-toggle span {
@@ -557,10 +699,45 @@ h1, h2, h3, h4, h5, h6 {
         rgba(0, 0, 0, 0.3) 0%,
         rgba(0, 0, 0, 0.5) 50%,
         rgba(0, 0, 0, 0.7) 100%
-    ), url('assets/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    );
+}
+
+/* Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* 16:9 aspect ratio */
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Video Overlay */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.75) 50%,
+        rgba(0, 0, 0, 0.85) 100%
+    );
+    z-index: 2;
 }
 
 .hero-overlay {
@@ -571,43 +748,135 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.2) 0%,
-        rgba(0, 0, 0, 0.4) 50%,
-        rgba(0, 0, 0, 0.6) 100%
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0.8) 100%
     );
-    z-index: -1;
+    z-index: 3;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 4;
     text-align: center;
-    max-width: 900px;
+    max-width: 1100px;
     padding: 0 var(--spacing-md);
     animation: fadeInUp 1s ease;
+    margin: 0 auto;
+}
+
+.hero-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: var(--spacing-sm);
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.8s;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.hero-label::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #c9a96e 20%, 
+        #c9a96e 80%, 
+        transparent 100%
+    );
+    box-shadow: 0 0 10px rgba(201, 169, 110, 0.5);
+    opacity: 0;
+    animation: fadeInLine 1s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInLine {
+    from {
+        opacity: 0;
+        width: 0;
+    }
+    to {
+        opacity: 1;
+        width: 280px;
+    }
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 300;
-    line-height: 1.1;
+    font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
     margin-bottom: var(--spacing-md);
-    letter-spacing: -0.02em;
-    color: var(--color-primary);
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
+    text-transform: uppercase;
+    text-align: center;
 }
 
-.hero-title span {
-    color: var(--color-text-muted);
-    font-weight: 300;
+.title-line {
+    display: block;
+    white-space: nowrap;
 }
 
 .hero-subtitle {
-    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-    color: var(--color-text-muted);
-    margin-bottom: var(--spacing-xl);
+    font-size: clamp(0.85rem, 1.4vw, 1rem);
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: var(--spacing-lg);
     font-weight: 300;
-    max-width: 600px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+    line-height: 1.6;
+    white-space: nowrap;
+}
+
+/* Logo da Cervo Films na Hero - glass liquid effect */
+.hero-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-logo-img {
+    height: 100px;
+    width: auto;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(1.2) drop-shadow(0 8px 32px rgba(255, 255, 255, 0.3));
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2),
+        0 0 80px rgba(255, 255, 255, 0.1);
+}
+
+.hero-logo:hover .hero-logo-img {
+    transform: scale(1.1) translateY(-5px);
+    filter: brightness(1.4) drop-shadow(0 12px 40px rgba(255, 255, 255, 0.5));
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.4),
+        inset 0 2px 6px rgba(255, 255, 255, 0.3),
+        0 0 100px rgba(255, 255, 255, 0.2);
 }
 
 .hero-buttons {
@@ -615,6 +884,10 @@ h1, h2, h3, h4, h5, h6 {
     gap: var(--spacing-md);
     justify-content: center;
     flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.2s;
 }
 
 .btn-hero-primary {
@@ -636,6 +909,81 @@ h1, h2, h3, h4, h5, h6 {
 .btn-hero-primary:hover {
     background-color: var(--color-secondary);
     transform: translateY(-2px);
+}
+
+/* Responsive Video */
+@media (max-width: 768px) {
+    .video-iframe {
+        width: 177.78vh; /* 16:9 aspect ratio for mobile */
+        height: 100vh;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-hero-primary {
+        width: 200px;
+    }
+    
+    /* Logo responsivo posicionado corretamente */
+    .brand-logo {
+        height: 45px;
+    }
+    
+    .nav-brand {
+        left: 15px;
+        width: 180px;
+    }
+    
+    /* Menu centralizado responsivo */
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+    
+    /* Botão CTA oculto em mobile */
+    .nav-cta {
+        display: none;
+    }
+    
+    /* Logo da Cervo Films menor responsiva */
+    .hero-logo-img {
+        height: 80px;
+        padding: 18px;
+    }
+    
+    .nav-container {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Logo mobile posicionado corretamente */
+    .brand-logo {
+        height: 35px;
+    }
+    
+    .nav-brand {
+        left: 10px;
+        width: 130px;
+    }
+    
+    /* Menu centralizado mobile */
+    .nav-menu {
+        gap: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+    
+    /* Logo da Cervo Films em mobile */
+    .hero-logo-img {
+        height: 60px;
+        padding: 15px;
+    }
+    
+    .nav-container {
+        height: 70px;
+    }
 }
 
 .btn-hero-secondary {
@@ -1314,82 +1662,157 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 100px;
 }
 
-.testimonials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: var(--spacing-lg);
+/* ══════════════════════════════════════════
+   Reviews Section — Cervo Films Premium
+   ══════════════════════════════════════════ */
+.rv {
     margin-bottom: var(--spacing-xl);
 }
 
-.testimonial {
-    background-color: #f7f7f7;
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-md);
-    border-left: 3px solid var(--color-primary);
-    color: #111111;
+.rv__title {
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #111;
+    margin-bottom: 48px;
 }
 
-.testimonial-header{
-    display:flex;
-    align-items:center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
+.rv__carousel {
+    position: relative;
+    padding: 0 60px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.testimonial-meta{
-    display:flex;
-    flex-direction:column;
-    gap: 4px;
-    min-width: 0;
+.rv__viewport {
+    overflow: hidden;
 }
 
-.testimonial-name{
-    font-weight: 800;
-    color: #111111;
-    line-height: 1.1;
-    font-size: 1.05rem;
+.rv__track {
+    display: flex;
+    gap: 24px;
+    will-change: transform;
 }
 
-.testimonial-role{
-    color: #555555;
-    font-size: 0.9rem;
-    line-height: 1.2;
+.rv__track.is-sliding {
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.testimonial-avatar{
+.rv__card {
+    flex: 0 0 calc(50% - 12px);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    padding: 36px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 260px;
+    box-sizing: border-box;
+    transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.rv__card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+.rv__stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 20px;
+}
+
+.rv__stars svg {
+    width: 18px;
+    height: 18px;
+    fill: #d4a853;
+}
+
+.rv__text {
+    margin: 0 0 24px;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #333;
+    font-style: italic;
+    flex: 1;
+}
+
+.rv__author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.rv__avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.rv__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.rv__name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #111;
+    letter-spacing: 0.01em;
+}
+
+.rv__role {
+    font-size: 0.8rem;
+    color: #777;
+    letter-spacing: 0.02em;
+}
+
+.rv__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    object-fit: cover;
-    flex: 0 0 48px;
-    filter: grayscale(100%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-.testimonial-stars{
-    display:flex;
-    gap: 6px;
-    flex-wrap: nowrap;
+.rv__arrow:hover {
+    background: #111;
+    border-color: #111;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.testimonial-stars svg{
-    width: 18px;
-    height: 18px;
-    fill: #111111;
-    flex: 0 0 18px;
+.rv__arrow:hover svg {
+    stroke: #fff;
 }
 
-.testimonial blockquote {
-    font-size: 1.1rem;
-    font-style: italic;
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.6;
+.rv__arrow:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
-.testimonial cite {
-    color: #555555;
-    font-size: 0.9rem;
-    font-style: normal;
+.rv__arrow svg {
+    stroke: #333;
+    transition: stroke 0.3s ease;
 }
+
+.rv__arrow--prev { left: 0; }
+.rv__arrow--next { right: 0; }
 
 .impact-numbers {
     display: grid;
@@ -1747,8 +2170,26 @@ h1, h2, h3, h4, h5, h6 {
         height: 300px;
     }
 
-    .testimonials {
-        grid-template-columns: 1fr;
+    .rv__carousel {
+        padding: 0 48px;
+    }
+
+    .rv__card {
+        flex: 0 0 100%;
+        min-height: 220px;
+        padding: 28px 24px 24px;
+    }
+
+    .rv__arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .rv__arrow--prev { left: 2px; }
+    .rv__arrow--next { right: 2px; }
+
+    .rv__title {
+        margin-bottom: 32px;
     }
 
     .impact-numbers {

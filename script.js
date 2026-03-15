@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '.service-card',
         '.differential-card',
         '.portfolio-item',
-        '.testimonial',
         '.stat',
         '.number',
         '.cta-content'
@@ -402,3 +401,146 @@ document.addEventListener('click', (e) => {
         setActiveServiceCard(null);
     }
 });
+
+// ══════════════════════════════════════════
+// Reviews Carousel — Cervo Films
+// Loop infinito: clona todos os cards ao final do track.
+// Quando a transição atinge um clone, reseta instantaneamente
+// para o original correspondente (mesmo visual, sem salto).
+// ══════════════════════════════════════════
+(function () {
+    var el = document.getElementById('reviewsCarousel');
+    if (!el) return;
+
+    var track    = el.querySelector('.rv__track');
+    var viewport = el.querySelector('.rv__viewport');
+    var btnPrev  = el.querySelector('.rv__arrow--prev');
+    var btnNext  = el.querySelector('.rv__arrow--next');
+    if (!track || !viewport || !btnPrev || !btnNext) return;
+
+    // --- Config ---
+    var GAP           = 24;   // px  (igual ao CSS gap)
+    var SPEED         = 700;  // ms  da transição
+    var AUTOPLAY_MS   = 4000; // ms  entre slides
+
+    // --- Originais ---
+    var originals = Array.from(track.children);
+    var total     = originals.length;
+    if (total === 0) return;
+
+    // --- Clones ao final ---
+    originals.forEach(function (card) {
+        var clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+    });
+
+    // --- Estado ---
+    var idx        = 0;
+    var sliding    = false;
+    var timer      = null;
+    var pauseTimer = null;
+
+    // --- Helpers ---
+    function perView() {
+        return window.innerWidth <= 768 ? 1 : 2;
+    }
+
+    function cardWidth() {
+        var vw = viewport.offsetWidth;
+        var pv = perView();
+        return (vw - GAP * (pv - 1)) / pv;
+    }
+
+    function moveTo(i, animate) {
+        var cw = cardWidth();
+        var offset = -(i * (cw + GAP));
+
+        if (animate) {
+            track.classList.add('is-sliding');
+        } else {
+            track.classList.remove('is-sliding');
+        }
+
+        track.style.transform = 'translateX(' + offset + 'px)';
+    }
+
+    // --- Slide ---
+    function slideNext() {
+        if (sliding) return;
+        sliding = true;
+        idx++;
+        moveTo(idx, true);
+    }
+
+    function slidePrev() {
+        if (sliding) return;
+        sliding = true;
+        idx--;
+        if (idx < 0) {
+            // Salto instantâneo para o fim dos originais e depois anima
+            idx = total - 1;
+            moveTo(total, false); // posição do clone correspondente
+            // forçar reflow
+            void track.offsetWidth;
+            idx = total - 1;
+            moveTo(idx, true);
+        } else {
+            moveTo(idx, true);
+        }
+    }
+
+    // --- Fim da transição ---
+    track.addEventListener('transitionend', function (e) {
+        // Ignorar eventos de filhos (hover nos cards)
+        if (e.target !== track) return;
+        sliding = false;
+        // Se passou dos originais → reseta para o índice 0
+        if (idx >= total) {
+            idx = 0;
+            moveTo(0, false);
+        }
+    });
+
+    // --- Autoplay ---
+    function play() {
+        stop();
+        timer = setInterval(slideNext, AUTOPLAY_MS);
+    }
+
+    function stop() {
+        clearInterval(timer);
+        timer = null;
+    }
+
+    // --- Eventos ---
+    btnNext.addEventListener('click', function () {
+        slideNext();
+        stop();
+        clearTimeout(pauseTimer);
+        pauseTimer = setTimeout(play, 6000);
+    });
+
+    btnPrev.addEventListener('click', function () {
+        slidePrev();
+        stop();
+        clearTimeout(pauseTimer);
+        pauseTimer = setTimeout(play, 6000);
+    });
+
+    el.addEventListener('mouseenter', stop);
+    el.addEventListener('mouseleave', play);
+
+    // --- Resize ---
+    var resizeId;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeId);
+        resizeId = setTimeout(function () {
+            moveTo(idx, false);
+        }, 200);
+    });
+
+    // --- Init ---
+    moveTo(0, false);
+    play();
+})();

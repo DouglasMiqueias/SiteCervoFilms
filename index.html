@@ -13,44 +13,86 @@
 <body>
     <!-- Navigation -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="assets/logo/logo-cervoFilms.svg" alt="">
+        <nav class="nav-container" role="navigation" aria-label="Navegação principal">
+                <div class="nav-brand">
+                    <a href="#hero" class="brand-link" aria-label="Cervo Films - Início">
+                        <img src="assets/logo/Logo-CervoFilms-BGTransp.png" alt="Cervo Films Logo" class="brand-logo">
+                    </a>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="#about" class="nav-link">SOBRE</a></li>
-                    <li><a href="#services" class="nav-link">SERVIÇOS</a></li>
-                    <li><a href="#portfolio" class="nav-link">PORTFÓLIO</a></li>
-                    <li><a href="#contact" class="nav-link">CONTATO</a></li>
-                </ul>
-                <div class="nav-contact">
-                    <a href="contato.html" class="btn-contact">FALE CONOSCO</a>
+                
+                <div class="nav-center">
+                    <ul class="nav-menu" role="menubar">
+                        <li class="nav-item" role="none">
+                            <a href="#about" class="nav-link" role="menuitem">Sobre</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#portfolio" class="nav-link" role="menuitem">Portfólio</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#social-proof" class="nav-link" role="menuitem">Depoimentos</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#contact" class="nav-link" role="menuitem">Contato</a>
+                        </li>
+                    </ul>
                 </div>
-                <button class="nav-toggle" aria-label="Menu">
+                
+                <div class="nav-cta">
+                    <a href="#contact" class="btn btn-primary nav-cta-btn">Fale Conosco</a>
+                </div>
+                
+                <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-            </div>
-        </nav>
+            </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Transformamos Eventos em<br>
-                    <span>Experiências Cinematográficas</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Criatividade, posicionamento e qualidade para eventos e marcas.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#portfolio" class="btn-hero-primary">VER PORTFÓLIO</a>
-                    <a href="#contact" class="btn-hero-secondary">SOLICITAR ORÇAMENTO</a>
+        <section id="hero" class="hero" role="banner">
+            <!-- Background Video -->
+            <div class="video-background">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/_7cbm4BsVOM?si=L3CnTTL4Q6BsPeuM&controls=0&autoplay=1&mute=1&loop=1&playlist=_7cbm4BsVOM" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen
+                    class="video-iframe">
+                </iframe>
+            </div>
+            
+            <!-- Video Overlay -->
+            <div class="video-overlay"></div>
+            
+            <!-- Hero Content -->
+            <div class="container hero-content">
+                <!-- Efeito REC no canto superior direito -->
+                <div class="rec-indicator">
+                    <div class="rec-dot"></div>
+                    <div class="rec-text">REC</div>
+                </div>
+                
+                <div class="hero-text">
+                    <!-- Logo da Cervo Films acima do texto -->
+                    <div class="hero-logo">
+                        <img src="assets/logo/Logo-CervoFilms-BGTransp.png" alt="Cervo Films Logo" class="hero-logo-img">
+                    </div>
+                    <p class="hero-label">PRODUÇÃO AUDIOVISUAL</p>
+                    <h1 class="hero-title">
+                        <span class="title-line">TRANSFORMAMOS EVENTOS EM</span>
+                        <span class="title-line">EXPERIÊNCIAS CINEMATOGRÁFICAS</span>
+                    </h1>
+                    <p class="hero-subtitle">Criatividade, agilidade e qualidade premium para eventos e marcas.</p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn btn-primary" aria-label="Ver nosso portfólio">Ver Portfólio</a>
+                        <a href="#contact" class="btn btn-secondary" aria-label="Fale conosco">Fale Conosco</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -373,107 +415,92 @@
                         </div>
                     </div>
 
-                    <div class="testimonials">
-                        <div class="testimonial">
-                            <div class="testimonial-header">
-                                <img src="assets/team/Thiago-Sodre.JPG" alt="Cliente" loading="lazy" class="testimonial-avatar">
-                                <div class="testimonial-meta">
-                                    <div class="testimonial-name">Nome do Cliente</div>
-                                    <div class="testimonial-role">Diretor de Marketing</div>
-                                    <div class="testimonial-stars" aria-label="Avaliação 5 de 5">
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <div class="rv">
+                        <h3 class="rv__title">O Que Dizem Nossos Clientes</h3>
+                        <div class="rv__carousel" id="reviewsCarousel">
+                            <button class="rv__arrow rv__arrow--prev" aria-label="Anterior">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                            </button>
+                            <div class="rv__viewport">
+                                <div class="rv__track" id="reviewsTrack">
+
+                                    <div class="rv__card">
+                                        <div class="rv__stars">
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        </div>
+                                        <blockquote class="rv__text">"Profissionalismo excepcional e qualidade cinematográfica. Superaram todas as expectativas do nosso projeto."</blockquote>
+                                        <div class="rv__author">
+                                            <img src="assets/team/Thiago-Sodre.JPG" alt="Flor do Café" class="rv__avatar" loading="lazy">
+                                            <div class="rv__info">
+                                                <span class="rv__name">Flor do Café</span>
+                                                <span class="rv__role">Marca Parceira</span>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <div class="rv__card">
+                                        <div class="rv__stars">
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        </div>
+                                        <blockquote class="rv__text">"Parabéns pela qualidade e pela entrega que vocês fazem. Meus alcances aumentaram muitos % depois que fechei com vocês. O nível profissional e a atenção aos detalhes fazem toda diferença no resultado final!"</blockquote>
+                                        <div class="rv__author">
+                                            <img src="assets/team/Walisson-Nobre.JPG" alt="DJ DUSHY" class="rv__avatar" loading="lazy">
+                                            <div class="rv__info">
+                                                <span class="rv__name">DJ DUSHY</span>
+                                                <span class="rv__role">Artista Musical</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="rv__card">
+                                        <div class="rv__stars">
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        </div>
+                                        <blockquote class="rv__text">"Trabalho diferenciado demais. Qualidade, criatividade e profissionalismo em cada foto. Quem contratar não vai se arrepender, serviço top. Recomendo demais!"</blockquote>
+                                        <div class="rv__author">
+                                            <img src="assets/team/Walisson-Nobre.JPG" alt="Thiago Camargo" class="rv__avatar" loading="lazy">
+                                            <div class="rv__info">
+                                                <span class="rv__name">Thiago Camargo</span>
+                                                <span class="rv__role">Organizador da Saroba Truck</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="rv__card">
+                                        <div class="rv__stars">
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                            <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                        </div>
+                                        <blockquote class="rv__text">"Trabalhar com essa equipe foi uma experiência incrível. Ficou claro o cuidado e o profissionalismo em cada detalhe. Captaram a essência do nosso trabalho. O resultado superou nossas expectativas. Recomendo de olhos fechados."</blockquote>
+                                        <div class="rv__author">
+                                            <img src="assets/team/Walisson-Nobre.JPG" alt="Chef Gabi Tropicana" class="rv__avatar" loading="lazy">
+                                            <div class="rv__info">
+                                                <span class="rv__name">Chef Gabi Tropicana</span>
+                                                <span class="rv__role">Embaixadora da Gastronomia do Cerrado</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                            <blockquote>
-                                "Profissionalismo excepcional e qualidade cinematográfica. Superaram todas as expectativas."
-                            </blockquote>
-                        </div>
-
-                      
-
-                        <div class="testimonial">
-                            <div class="testimonial-header">
-                                <img src="assets/team/Walisson-Nobre.JPG" alt="Cliente" loading="lazy" class="testimonial-avatar">
-                                <div class="testimonial-meta">
-                                    <div class="testimonial-name">DJ DUSHY</div>
-                                    <div class="testimonial-role">Artista Musical</div>
-                                    <div class="testimonial-stars" aria-label="Avaliação 5 de 5">
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <blockquote>
-                                "Parabéns pela qualidade e pela entrega que vocês fazem. Sinceramente, vocês já sabem curtir muito o trabalho de vocês. Meus alcances aumentaram muitos % depois que fechei com vocês. O nível profissional e a atenção aos detalhes fazem toda diferença no resultado final!"
-                            </blockquote>
-                        </div>
-
-                        <div class="testimonial">
-                            <div class="testimonial-header">
-                                <img src="assets/team/Walisson-Nobre.JPG" alt="Cliente" loading="lazy" class="testimonial-avatar">
-                                <div class="testimonial-meta">
-                                    <div class="testimonial-name">Thiago Camargo</div>
-                                    <div class="testimonial-role">Organizador da Saroba Truck</div>
-                                    <div class="testimonial-stars" aria-label="Avaliação 5 de 5">
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <blockquote>
-                                "Trabalho diferenciado demais. Qualidade, criatividade e profissionalismo em cada foto. Quem contratar não vai se arrepender, serviço top. Mais que um trabalho absurdo! Os caras são brabos no que fazem, cada detalhe nas fotos fica perfeito. Recomendo demais!"
-                            </blockquote>
-                        </div>
-
-                        <div class="testimonial">
-                            <div class="testimonial-header">
-                                <img src="assets/team/Walisson-Nobre.JPG" alt="Cliente" loading="lazy" class="testimonial-avatar">
-                                <div class="testimonial-meta">
-                                    <div class="testimonial-name">DJ DUSHY</div>
-                                    <div class="testimonial-role">Artista Musical</div>
-                                    <div class="testimonial-stars" aria-label="Avaliação 5 de 5">
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <blockquote>
-                                "Parabéns pela qualidade e pela entrega que vocês fazem. Sinceramente, vocês já sabem curtir muito o trabalho de vocês. Meus alcances aumentaram muitos % depois que fechei com vocês. O nível profissional e a atenção aos detalhes fazem toda diferença no resultado final!"
-                            </blockquote>
-                        </div>
-
-                        <div class="testimonial">
-                            <div class="testimonial-header">
-                                <img src="assets/team/Walisson-Nobre.JPG" alt="Cliente" loading="lazy" class="testimonial-avatar">
-                                <div class="testimonial-meta">
-                                    <div class="testimonial-name">Chef Gabi Tropicana</div>
-                                    <div class="testimonial-role">Embaixadora da Gastronomia do Cerrado Mineiro</div>
-                                    <div class="testimonial-stars" aria-label="Avaliação 5 de 5">
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <blockquote>
-                                "Trabalhar com essa equipe foi uma experiência incrível. Desde o primeiro contato, ficou claro o cuidado, a sensibilidade e o profissionalismo em cada detalhe do processo. Eles conseguiram captar a essência do nosso trabalho, a verdade da nossa cozinha e a história por trás de tudo o que fazemos. O resultado final superou nossas expectativas e mostrou o quanto uma produção feita com dedicação e olhar técnico faz toda diferença. Sou muito grata por essa parceria e recomendo de olhos fechados."
-                            </blockquote>
+                            <button class="rv__arrow rv__arrow--next" aria-label="Próximo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                            </button>
                         </div>
                     </div>
 
@@ -577,6 +604,35 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+    
+    <!-- Navbar Scroll Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.header');
+            const hero = document.querySelector('.hero');
+            
+            // Mostrar navbar quando rolar para baixo da hero section
+            function handleScroll() {
+                const heroHeight = hero.offsetHeight;
+                const scrollPosition = window.scrollY;
+                
+                if (scrollPosition > heroHeight * 0.8) {
+                    header.classList.remove('hidden');
+                    header.classList.add('visible');
+                } else {
+                    header.classList.remove('visible');
+                    header.classList.add('hidden');
+                }
+            }
+            
+            // Verificar scroll inicial
+            handleScroll();
+            
+            // Adicionar listener de scroll
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
 </body>
 </html>
