@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '.service-card',
         '.differential-card',
         '.portfolio-item',
-        '.testimonial',
         '.stat',
         '.number',
         '.cta-content'
@@ -84,107 +83,110 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Team Slider
-let currentMember = 0;
-const teamMembers = document.querySelectorAll('.team-member');
-const totalMembers = teamMembers.length;
-const dots = document.querySelectorAll('.dot');
-const prevBtn = document.querySelector('.team-nav-btn.prev');
-const nextBtn = document.querySelector('.team-nav-btn.next');
-
-function showMember(index) {
-    // Hide all members
-    teamMembers.forEach(member => {
-        member.classList.remove('active');
-    });
-    
-    // Remove active from all dots
-    dots.forEach(dot => {
-        dot.classList.remove('active');
-    });
-    
-    // Show current member
-    teamMembers[index].classList.add('active');
-    dots[index].classList.add('active');
-    
-    currentMember = index;
-}
-
-function nextMember() {
-    currentMember = (currentMember + 1) % totalMembers;
-    showMember(currentMember);
-}
-
-function prevMember() {
-    currentMember = (currentMember - 1 + totalMembers) % totalMembers;
-    showMember(currentMember);
-}
-
-// Navigation buttons
-if (nextBtn) {
-    nextBtn.addEventListener('click', nextMember);
-}
-
-if (prevBtn) {
-    prevBtn.addEventListener('click', prevMember);
-}
-
-// Dot navigation
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        showMember(index);
-    });
-});
-
-// Auto-play (optional)
-let autoPlayInterval;
-
-function startAutoPlay() {
-    autoPlayInterval = setInterval(nextMember, 5000);
-}
-
-function stopAutoPlay() {
-    clearInterval(autoPlayInterval);
-}
-
-// Start auto-play
-startAutoPlay();
-
-// Stop auto-play on hover
 const teamSlider = document.querySelector('.team-slider');
 if (teamSlider) {
+    let currentMember = 0;
+    const teamMembers = document.querySelectorAll('.team-member');
+    const totalMembers = teamMembers.length;
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.team-nav-btn.prev');
+    const nextBtn = document.querySelector('.team-nav-btn.next');
+
+    function showMember(index) {
+        // Hide all members
+        teamMembers.forEach(member => {
+            member.classList.remove('active');
+        });
+
+        // Remove active from all dots
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+
+        // Show current member
+        if (teamMembers[index]) teamMembers[index].classList.add('active');
+        if (dots[index]) dots[index].classList.add('active');
+
+        currentMember = index;
+    }
+
+    function nextMember() {
+        if (!totalMembers) return;
+        currentMember = (currentMember + 1) % totalMembers;
+        showMember(currentMember);
+    }
+
+    function prevMember() {
+        if (!totalMembers) return;
+        currentMember = (currentMember - 1 + totalMembers) % totalMembers;
+        showMember(currentMember);
+    }
+
+    // Navigation buttons
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextMember);
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevMember);
+    }
+
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showMember(index);
+        });
+    });
+
+    // Auto-play (optional)
+    let autoPlayInterval;
+
+    function startAutoPlay() {
+        if (!totalMembers) return;
+        autoPlayInterval = setInterval(nextMember, 5000);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Start auto-play
+    startAutoPlay();
+
+    // Stop auto-play on hover
     teamSlider.addEventListener('mouseenter', stopAutoPlay);
     teamSlider.addEventListener('mouseleave', startAutoPlay);
-}
 
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-        prevMember();
-        stopAutoPlay();
-    } else if (e.key === 'ArrowRight') {
-        nextMember();
-        stopAutoPlay();
-    }
-});
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevMember();
+            stopAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            nextMember();
+            stopAutoPlay();
+        }
+    });
 
-// Touch/swipe support
-let touchStartX = 0;
-let touchEndX = 0;
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-teamSlider.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
+    teamSlider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
 
-teamSlider.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
+    teamSlider.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
 
-function handleSwipe() {
-    if (touchEndX < touchStartX - 50) {
-        nextMember();
-    } else if (touchEndX > touchStartX + 50) {
-        prevMember();
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            nextMember();
+        } else if (touchEndX > touchStartX + 50) {
+            prevMember();
+        }
     }
 }
 
@@ -197,7 +199,7 @@ document.querySelectorAll('.portfolio-item').forEach(item => {
 });
 
 // Counter animation for numbers
-const animateCounter = (element, target) => {
+const animateCounter = (element, target, suffix) => {
     const duration = 2000;
     const step = target / (duration / 16);
     let current = 0;
@@ -205,10 +207,10 @@ const animateCounter = (element, target) => {
     const updateCounter = () => {
         current += step;
         if (current < target) {
-            element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '');
+            element.textContent = Math.floor(current) + suffix;
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target + (element.textContent.includes('+') ? '+' : '');
+            element.textContent = target + suffix;
         }
     };
     
@@ -224,7 +226,7 @@ const counterObserver = new IntersectionObserver((entries) => {
             const suffix = text.replace(/[0-9]/g, '');
             
             entry.target.classList.add('animated');
-            animateCounter(entry.target, number);
+            animateCounter(entry.target, number, suffix);
         }
     });
 }, { threshold: 0.5 });
@@ -335,62 +337,366 @@ document.head.appendChild(style);
 console.log('%c🦌 Cervo Films', 'font-size: 20px; font-weight: bold; color: #ffffff;');
 console.log('%cTransformamos eventos em experiências cinematográficas', 'font-size: 14px; color: #666;');
 
-/* EXPANSÃO POR HOVER */
+/* SERVICES - EXPANSÃO POR CLIQUE (TOGGLE) */
+const servicesGrid = document.querySelector('.services-grid');
+const serviceCards = document.querySelectorAll('.service-card');
 
-document.querySelectorAll(".service-card").forEach(card => {
+const servicesState = {
+    activeCard: null
+};
 
-    const video = card.querySelector(".service-video");
-
-    card.addEventListener("mouseenter", () => {
-
-        document.querySelectorAll(".service-card")
-        .forEach(c => c.classList.remove("expanded"));
-
-        card.classList.add("expanded");
-
-        if(video){
-            video.currentTime = 0;
-            video.play();
-        }
-
+function setActiveServiceCard(card) {
+    serviceCards.forEach(c => {
+        c.classList.remove('active', 'expanded');
+        c.setAttribute('aria-expanded', 'false');
     });
+    servicesGrid?.classList.remove('has-active');
 
-    card.addEventListener("mouseleave", () => {
+    if (!card) {
+        servicesState.activeCard = null;
+        return;
+    }
 
-        card.classList.remove("expanded");
+    card.classList.add('active', 'expanded');
+    card.setAttribute('aria-expanded', 'true');
+    servicesGrid?.classList.add('has-active');
+    servicesState.activeCard = card;
 
-        if(video){
-            video.pause();
-            video.currentTime = 0;
-        }
+    // Acessibilidade
+    card.focus();
+}
 
-    });
+function toggleServiceCard(card) {
+    if (servicesState.activeCard === card) {
+        setActiveServiceCard(null);
+    } else {
+        setActiveServiceCard(card);
+    }
+}
 
+// Clique para expandir/colapsar (event delegation)
+servicesGrid?.addEventListener('click', (e) => {
+    const card = e.target.closest?.('.service-card');
+    if (!card || !servicesGrid.contains(card)) return;
+    toggleServiceCard(card);
 });
 
-
-
-const grid = document.querySelector('.services-grid');
-const cards = document.querySelectorAll('.service-card');
-
-cards.forEach(card => {
-
-    card.addEventListener('mouseenter', () => {
-
-        grid.classList.add('has-active');
-
-        cards.forEach(c => c.classList.remove('active'));
-
-        card.classList.add('active');
-
+// Teclado: Enter/Space expande, ESC fecha
+serviceCards.forEach(card => {
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleServiceCard(card);
+        }
+        if (e.key === 'Escape') {
+            setActiveServiceCard(null);
+        }
     });
-
 });
 
-grid.addEventListener('mouseleave', () => {
+// Clicar fora fecha
+document.addEventListener('click', (e) => {
+    if (!servicesGrid) return;
+    if (!servicesGrid.contains(e.target)) {
+        setActiveServiceCard(null);
+    }
+});
 
-    grid.classList.remove('has-active');
+// ══════════════════════════════════════════
+// Reviews Carousel — Cervo Films
+// Loop infinito: clona todos os cards ao final do track.
+// Quando a transição atinge um clone, reseta instantaneamente
+// para o original correspondente (mesmo visual, sem salto).
+// ══════════════════════════════════════════
+(function () {
+    var el = document.getElementById('reviewsCarousel');
+    if (!el) return;
 
-    cards.forEach(c => c.classList.remove('active'));
+    var track    = el.querySelector('.rv__track');
+    var viewport = el.querySelector('.rv__viewport');
+    var btnPrev  = el.querySelector('.rv__arrow--prev');
+    var btnNext  = el.querySelector('.rv__arrow--next');
+    if (!track || !viewport || !btnPrev || !btnNext) return;
 
+    // --- Config ---
+    var GAP           = 24;   // px  (igual ao CSS gap)
+    var SPEED         = 700;  // ms  da transição
+    var AUTOPLAY_MS   = 4000; // ms  entre slides
+
+    // --- Originais ---
+    var originals = Array.from(track.children);
+    var total     = originals.length;
+    if (total === 0) return;
+
+    // --- Clones ao final ---
+    originals.forEach(function (card) {
+        var clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+    });
+
+    // --- Estado ---
+    var idx        = 0;
+    var sliding    = false;
+    var timer      = null;
+    var pauseTimer = null;
+
+    // --- Helpers ---
+    function perView() {
+        return window.innerWidth <= 768 ? 1 : 2;
+    }
+
+    function cardWidth() {
+        var vw = viewport.offsetWidth;
+        var pv = perView();
+        return (vw - GAP * (pv - 1)) / pv;
+    }
+
+    function moveTo(i, animate) {
+        var cw = cardWidth();
+        var offset = -(i * (cw + GAP));
+
+        if (animate) {
+            track.classList.add('is-sliding');
+        } else {
+            track.classList.remove('is-sliding');
+        }
+
+        track.style.transform = 'translateX(' + offset + 'px)';
+    }
+
+    // --- Slide ---
+    function slideNext() {
+        if (sliding) return;
+        sliding = true;
+        idx++;
+        moveTo(idx, true);
+    }
+
+    function slidePrev() {
+        if (sliding) return;
+        sliding = true;
+        idx--;
+        if (idx < 0) {
+            // Salto instantâneo para o fim dos originais e depois anima
+            idx = total - 1;
+            moveTo(total, false); // posição do clone correspondente
+            // forçar reflow
+            void track.offsetWidth;
+            idx = total - 1;
+            moveTo(idx, true);
+        } else {
+            moveTo(idx, true);
+        }
+    }
+
+    // --- Fim da transição ---
+    track.addEventListener('transitionend', function (e) {
+        // Ignorar eventos de filhos (hover nos cards)
+        if (e.target !== track) return;
+        sliding = false;
+        // Se passou dos originais → reseta para o índice 0
+        if (idx >= total) {
+            idx = 0;
+            moveTo(0, false);
+        }
+    });
+
+    // --- Autoplay ---
+    function play() {
+        stop();
+        timer = setInterval(slideNext, AUTOPLAY_MS);
+    }
+
+    function stop() {
+        clearInterval(timer);
+        timer = null;
+    }
+
+    // --- Eventos ---
+    btnNext.addEventListener('click', function () {
+        slideNext();
+        stop();
+        clearTimeout(pauseTimer);
+        pauseTimer = setTimeout(play, 6000);
+    });
+
+    btnPrev.addEventListener('click', function () {
+        slidePrev();
+        stop();
+        clearTimeout(pauseTimer);
+        pauseTimer = setTimeout(play, 6000);
+    });
+
+    el.addEventListener('mouseenter', stop);
+    el.addEventListener('mouseleave', play);
+
+    // --- Resize ---
+    var resizeId;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeId);
+        resizeId = setTimeout(function () {
+            moveTo(idx, false);
+        }, 200);
+    });
+
+    // --- Init ---
+    moveTo(0, false);
+    play();
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.camera-card');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    
+    let currentIndex = 0;
+    const totalCards = cards.length;
+    const cardsPerView = 2;
+    const maxIndex = totalCards - cardsPerView;
+    
+    function updateCarousel() {
+        track.className = `carousel-track ${currentIndex === maxIndex ? 'show-card-3' : ''}`;
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index < cardsPerView || (currentIndex === maxIndex && index === 2));
+        });
+    }
+    
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+    
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            if (index <= maxIndex) {
+                currentIndex = index;
+                updateCarousel();
+            }
+        });
+    });
+    
+    // Auto-play opcional
+    // setInterval(() => {
+    //     if (currentIndex < maxIndex) {
+    //         currentIndex++;
+    //     } else {
+    //         currentIndex = 0;
+    //     }
+    //     updateCarousel();
+    // }, 5000);
+});
+// Carrossel automático com títulos dinâmicos
+document.addEventListener('DOMContentLoaded', function() {
+    const galleries = document.querySelectorAll('.containerVideo[data-gallery]');
+    
+    galleries.forEach(gallery => {
+        const track = gallery.querySelector('.gallery-track');
+        const slides = track.querySelectorAll('.gallery-slide');
+        const indicator = gallery.querySelector('.indicator');
+        
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        let autoPlayInterval;
+        const autoPlayDelay = 4000;
+        let isPaused = false;
+        
+        function updateGallery() {
+            // Move track
+            const translateX = -currentIndex * 100;
+            track.style.transform = `translateX(${translateX}%)`;
+            
+            // Update indicator
+            indicator.textContent = `${currentIndex + 1}/${totalSlides}`;
+            
+            // Update active slide (para título)
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentIndex);
+            });
+        }
+        
+        function nextSlide() {
+            if (!isPaused) {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateGallery();
+            }
+        }
+        
+        function startAutoPlay() {
+            if (autoPlayInterval) clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(nextSlide, autoPlayDelay);
+        }
+        
+        function pauseAutoPlay() {
+            isPaused = true;
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+        }
+        
+        function resumeAutoPlay() {
+            isPaused = false;
+            startAutoPlay();
+        }
+        
+        // Inicializar
+        if (totalSlides > 0) {
+            updateGallery();
+            startAutoPlay();
+        }
+        
+        // Pause/resume behaviors
+        gallery.addEventListener('mouseenter', pauseAutoPlay);
+        gallery.addEventListener('mouseleave', resumeAutoPlay);
+        
+        // Touch/swipe
+        let startX = 0, currentX = 0;
+        track.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+            pauseAutoPlay();
+        });
+        
+        track.addEventListener('touchmove', e => {
+            currentX = e.touches[0].clientX;
+        });
+        
+        track.addEventListener('touchend', () => {
+            const diff = startX - currentX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                } else {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                }
+                updateGallery();
+            }
+            setTimeout(resumeAutoPlay, 2000);
+        });
+        
+        // Keyboard
+        gallery.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            } else if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % totalSlides;
+            }
+            updateGallery();
+            pauseAutoPlay();
+            setTimeout(resumeAutoPlay, 3000);
+        });
+    });
 });
