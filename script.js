@@ -606,7 +606,6 @@ document.addEventListener('DOMContentLoaded', function() {
     galleries.forEach(gallery => {
         const track = gallery.querySelector('.gallery-track');
         const slides = track.querySelectorAll('.gallery-slide');
-        const indicator = gallery.querySelector('.indicator');
         
         let currentIndex = 0;
         const totalSlides = slides.length;
@@ -618,9 +617,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Move track
             const translateX = -currentIndex * 100;
             track.style.transform = `translateX(${translateX}%)`;
-            
-            // Update indicator
-            indicator.textContent = `${currentIndex + 1}/${totalSlides}`;
             
             // Update active slide (para título)
             slides.forEach((slide, index) => {

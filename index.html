@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cervo Films - Produção Audiovisual Premium</title>
     <meta name="description" content="Transformamos eventos em experiências cinematográficas. Criatividade, agilidade e qualidade premium para marcas que exigem mais.">
+    <link rel="stylesheet" href="css/roots.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/responsivo.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -54,17 +53,10 @@
         <section id="hero" class="hero" role="banner">
             <!-- Background Video -->
             <div class="video-background">
-                <iframe 
-                    width="560" 
-                    height="315" 
-                    src="https://www.youtube.com/embed/_7cbm4BsVOM?si=L3CnTTL4Q6BsPeuM&controls=0&autoplay=1&mute=1&loop=1&playlist=_7cbm4BsVOM" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen
-                    class="video-iframe">
-                </iframe>
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <iframe src="https://player.vimeo.com/video/1174577608?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;controls=0&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="DEIXA ROLAR VIDEOCLIPE OFICIAL 4K.mp4"></iframe>
+                </div>
+                <script src="https://player.vimeo.com/api/player.js"></script>
             </div>
             
             <!-- Video Overlay -->
@@ -73,10 +65,10 @@
             <!-- Hero Content -->
             <div class="container hero-content">
                 <!-- Efeito REC no canto superior direito -->
-                <div class="rec-indicator">
+                <!-- <div class="rec-indicator">
                     <div class="rec-dot"></div>
                     <div class="rec-text">REC</div>
-                </div>
+                </div> -->
                 
                 <div class="hero-text">
                     <!-- Logo da Cervo Films acima do texto -->
@@ -222,15 +214,7 @@
                                 <li>After Movie cinematográfico</li>
                             </ul>
                             <div class="service-expanded-content">
-                                <div class="service-features">
-                                    <h4>O que inclui</h4>
-                                    <ul>
-                                        <li>Captação multicâmera</li>
-                                        <li>Entrega de stories em tempo real</li>
-                                        <li>After Movie cinematográfico</li>
-                                        <li>Edição profissional e color grading</li>
-                                    </ul>
-                                </div>
+                               
                                 <div class="service-differentials">
                                     <h4>Diferenciais</h4>
                                     <ul>
@@ -246,20 +230,18 @@
                             <div class="gallery-track">
                                 <div class="gallery-slide">
                                     <img src="assets/galeriaServices/evento1.PNG" alt="Evento corporativo" loading="lazy">
-                                    <div class="slide-title">Evento Corporativo</div>
+                                    
                                 </div>
                                 <div class="gallery-slide">
                                     <img src="assets/galeriaServices/evento2.PNG" alt="Casamento ao vivo" loading="lazy">
-                                    <div class="slide-title">Casamento ao Vivo</div>
+                                    
                                 </div>
                                 <div class="gallery-slide">
                                     <img src="assets/galeriaServices/evento3.PNG" alt="Festival de música" loading="lazy">
-                                    <div class="slide-title">Festival de Música</div>
+                                    
                                 </div>
                             </div>
-                            <div class="gallery-indicators">
-                                <span class="indicator">1/3</span>
-                            </div>
+                           
                         </div>
                     </article>
 
@@ -283,15 +265,7 @@
                                 <li>Posts para redes sociais</li>
                             </ul>
                             <div class="service-expanded-content">
-                                <div class="service-features">
-                                    <h4>O que inclui</h4>
-                                    <ul>
-                                        <li>Sessão fotográfica profissional</li>
-                                        <li>Edição de imagens e retoque</li>
-                                        <li>Criação de posts para redes sociais</li>
-                                        <li>Entrega em alta resolução</li>
-                                    </ul>
-                                </div>
+                                
                                 <div class="service-differentials">
                                     <h4>Diferenciais</h4>
                                     <ul>
@@ -326,15 +300,7 @@
                                 <li>Motion graphics</li>
                             </ul>
                             <div class="service-expanded-content">
-                                <div class="service-features">
-                                    <h4>O que inclui</h4>
-                                    <ul>
-                                        <li>Vídeos institucionais e corporativos</li>
-                                        <li>Comerciais para TV e internet</li>
-                                        <li>Depoimentos de clientes</li>
-                                        <li>Motion graphics e animações</li>
-                                    </ul>
-                                </div>
+                                
                                 <div class="service-differentials">
                                     <h4>Diferenciais</h4>
                                     <ul>
@@ -355,7 +321,7 @@
         </section>
 
         <!-- Team Section -->
-           <section id="team" class="team">
+        <section id="team" class="team">
             <div class="container">
                 <h2 class="section-title">Nossa Equipe</h2>
             </div>
@@ -374,7 +340,7 @@
                 <img src="assets/team/Thales-Borges.JPG" alt="Thales Borges">
                 <div class="team-overlay">
                 <p class="team-name">Thales Borges</p>
-                <p class="team-role">Head de Produção</p>
+                <p class="team-role">HEAD DE PRODUÇÃO</p>
                 </div>
             </div>
 
@@ -383,7 +349,7 @@
                 <img src="assets/team/Wallison-Nobre.jpeg" alt="">
                 <div class="team-overlay">
                 <p class="team-name">Wallison Nobre</p>
-                <p class="team-role">Head de fotografia</p>
+                <p class="team-role">HEAD DE FOTOGRAFIA</p>
                 </div>
             </div>
 
@@ -391,7 +357,7 @@
                 <img src="assets/team/Rayane-Rocha.jpeg" alt="Rayane Rocha">
                 <div class="team-overlay">
                 <p class="team-name">Rayane Rocha</p>
-                <p class="team-role">Gestão de Projetos </p>
+                <p class="team-role">GESTORA DE PROJETOS</p>
                 </div>
             </div>
 
@@ -399,7 +365,7 @@
                 <img src="assets/team/Wendel-Henrique.JPEG" alt="Wendel Henrique">
                 <div class="team-overlay">
                 <p class="team-name">Wendel Henrique</p>
-                <p class="team-role">Editor</p>
+                <p class="team-role">EDITOR</p>
                 </div>
             </div>
 
@@ -407,7 +373,7 @@
                 <img src="assets/team/Kathlen-Cruz.jpeg" alt="Kathlen Cruz">
                 <div class="team-overlay">
                 <p class="team-name">Kathlen Cruz</p>
-                <p class="team-role">Filmmaker</p>
+                <p class="team-role">FILMMAKER</p>
                 </div>
             </div>
 
@@ -415,166 +381,172 @@
                 <img src="assets/team/Joao-Victor.PNG" alt="">
                 <div class="team-overlay">
                 <p class="team-name">Joao Victor</p>
-                <p class="team-role">Fillmker</p>
+                <p class="team-role">DRONEMAKER</p>
                 </div>
             </div>
-
-
-            </div>
-
-
+        </div>
         </section>
 
         <!-- Differentials Section -->
-<section class="differentials">
-    <div class="container">
-        <!-- Background animado -->
-        <div class="differentials-bg">
-            <div class="bg-particle bg-particle-1"></div>
-            <div class="bg-particle bg-particle-2"></div>
-            <div class="bg-particle bg-particle-3"></div>
-        </div>
+        <section class="differentials">
+            <div class="container">
+                <!-- Background animado -->
+                <div class="differentials-bg">
+                    <div class="bg-particle bg-particle-1"></div>
+                    <div class="bg-particle bg-particle-2"></div>
+                    <div class="bg-particle bg-particle-3"></div>
+                </div>
 
-        <!-- Header -->
-        <div class="section-header">
-            <div class="section-badge">Por que nos escolher?</div>
-            <h2 class="section-title">Nossos <span class="gradient-text">Diferenciais</span></h2>
-        </div>
-        
-        <!-- 🎠 CARROSSEL DE CÂMERAS LEICA -->
-        <div class="differentials-carousel">
-            <!-- 🖼️ Card 1 - Leica M11 Monochrom -->
-            <div class="leica-camera-card" data-aos="fade-up" data-aos-delay="100">
-                <!-- Logo no início do card, após <div class="leica-camera-card"> -->
-<div class="recording-light"></div>
-                <!-- CAMERA VISUAL (mantém como está) -->
-                <div class="leica-number">01</div>
-                <div class="leica-lens">
-                    <div class="lens-glass"></div>
+                <!-- Header -->
+                <div class="section-header">
+                    <div class="section-badge">Por que nos escolher?</div>
+                    <h2 class="section-title">Nossos <span class="gradient-text">Diferenciais</span></h2>
+                </div>
+                
+                <!-- 🎠 CARROSSEL DE CÂMERAS LEICA -->
+                <div class="differentials-carousel">
+                    <!-- 🖼️ Card 1 - Leica M11 Monochrom -->
+                    <div class="leica-camera-card" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Logo no início do card, após <div class="leica-camera-card"> -->
+        <div class="recording-light"></div>
+            
                     
-                </div>
-          
-           
                 
-                <!-- 🎯 CONTEÚDO RESTRUTURADO COM DIVISORES -->
-                <div class="card-header">
-                    <div class="differential-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
+                
+                        
+                        <!-- 🎯 CONTEÚDO RESTRUTURADO COM DIVISORES -->
+                        <div class="card-header">
+                            <div class="differential-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="differential-title">Entrega Rápida</h3>
+                        </div>
+                        
+                        <div class="card-section">
+                            <p class="differential-description">
+                                Agilidade sem comprometer qualidade. 
+                                <strong>Entrega em 24h</strong> e revisões ilimitadas.
+                            </p>
+                        </div>
+                        
+                        <div class="card-section">
+                            <div class="differential-features">
+                                <span class="feature-item">24h para entrega</span>
+                                <span class="feature-item">Real Time</span>
+                                <span class="feature-item">Revisões Rápidas</span>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="differential-title">Entrega Rápida</h3>
-                </div>
+
+                    <!-- 🖼️ Card 2 - Leica M11 -->
+                    <div class="leica-camera-card" data-aos="fade-up" data-aos-delay="200">
+                        <!-- Logo no início do card, após <div class="leica-camera-card"> -->
+                <div class="recording-light"></div>
+
                 
-                <div class="card-section">
-                    <p class="differential-description">
-                        Máxima agilidade sem comprometer qualidade. 
-                        <strong>48h para MVP</strong> e revisões ilimitadas.
-                    </p>
-                </div>
-                
-                <div class="card-section">
-                    <div class="differential-features">
-                        <span class="feature-item">48h Delivery</span>
-                        <span class="feature-item">Qualidade</span>
-                        <span class="feature-item">Revisão ilimitada</span>
-                        <span class="feature-item">Garantia total</span>
+                        
+                        <!-- CONTEÚDO COM DIVISORES -->
+                        <div class="card-header">
+                            <div class="differential-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <h3 class="differential-title">Qualidade Cinematográfica</h3>
+                        </div>
+                        
+                        <div class="card-section">
+                            <p class="differential-description">
+                                Produção broadcast com equipamentos profissionais e ultima geração. 
+                                <strong>4K</strong>.
+                            </p>
+                        </div>
+                        
+                        <div class="card-section">
+                            <div class="differential-features">
+                                <span class="feature-item">FX30</span>
+                                <span class="feature-item">Premiere</span>
+                                <span class="feature-item">4K</span>
+                                <span class="feature-item">Drone</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 🖼️ Card 3 - Leica M11-P -->
+                    <div class="leica-camera-card" data-aos="fade-up" data-aos-delay="300">
+                        <!-- Logo no início do card, após <div class="leica-camera-card"> -->
+        <div class="recording-light"></div>
+                    
+                        
+                        <!-- CONTEÚDO COM DIVISORES -->
+                        <div class="card-header">
+                            <div class="differential-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18h6"></path>
+                                <path d="M10 22h4"></path>
+                                <path d="M12 2a7 7 0 0 0-4 12c1 1 2 2 2 4h4c0-2 1-3 2-4a7 7 0 0 0-4-12z"></path>
+                            </svg>
+                            </div>
+                            <h3 class="differential-title">Criatividade Estratégica</h3>
+                        </div>
+                        
+                        <div class="card-section">
+                            <p class="differential-description">
+                                Ideias pensadas para posicionar sua marca e gerar <strong>impacto real</strong>.
+                            </p>
+                        </div>
+                        
+                        <div class="card-section">
+                            <div class="differential-features">
+                                <span class="feature-item">Reuniões de alinhamento</span>
+                                <span class="feature-item">Direção Criativa</span>
+                                <span class="feature-item">Roteirização</span>
+                                <span class="feature-item"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- 🖼️ Card 2 - Leica M11 -->
-            <div class="leica-camera-card" data-aos="fade-up" data-aos-delay="200">
-                <!-- Logo no início do card, após <div class="leica-camera-card"> -->
-<div class="recording-light"></div>
-
-                    <div class="leica-number">02</div>
-
-                
-                <div class="leica-lens">
-                    <div class="lens-glass"></div>
-                </div>
-                
-
-                
-                <!-- CONTEÚDO COM DIVISORES -->
-                <div class="card-header">
-                    <div class="differential-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                        </svg>
-                    </div>
-                    <h3 class="differential-title">Qualidade Cinematográfica</h3>
-                </div>
-                
-                <div class="card-section">
-                    <p class="differential-description">
-                        Produção broadcast com equipamentos profissionais e ultima geração. 
-                        <strong>4K • 8K • HDR10+</strong>.
-                    </p>
-                </div>
-                
-                <div class="card-section">
-                    <div class="differential-features">
-                        <span class="feature-item">RED Komodo</span>
-                        <span class="feature-item">DaVinci Resolve</span>
-                        <span class="feature-item">Dolby Atmos</span>
-                        <span class="feature-item">120fps</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 🖼️ Card 3 - Leica M11-P -->
-            <div class="leica-camera-card" data-aos="fade-up" data-aos-delay="300">
-                <!-- Logo no início do card, após <div class="leica-camera-card"> -->
-<div class="recording-light"></div>
-                <div class="leica-number">03</div>
-                <div class="leica-lens">
-                    <div class="lens-glass"></div>
-             
-                </div>
-                
-                <!-- CONTEÚDO COM DIVISORES -->
-                <div class="card-header">
-                    <div class="differential-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="differential-title">Criatividade Estratégica</h3>
-                </div>
-                
-                <div class="card-section">
-                    <p class="differential-description">
-                        Conceitos originais alinhados ao seu <strong>ROI</strong>. 
-                        Estratégia criativa com dados e briefing profundo.
-                    </p>
-                </div>
-                
-                <div class="card-section">
-                    <div class="differential-features">
-                        <span class="feature-item">Briefing profundo</span>
-                        <span class="feature-item">Testes A/B</span>
-                        <span class="feature-item">KPIs definidos</span>
-                        <span class="feature-item">ROI garantido</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
         <!-- Portfolio Section -->
         <section id="portfolio" class="portfolio">
             <div class="container">
                 <h2 class="section-title">Portfólio</h2>
             </div>
             <div class="portfolio-grid">
-                <img src="https://pub-e5ab79f76e6e4c32841ea6868cfdb1bd.r2.dev/Dj.JPG" alt="Evento Itaú" class="portfolio-item">
-                <img src="https://pub-e5ab79f76e6e4c32841ea6868cfdb1bd.r2.dev/Hungria.JPG" alt="Show Musical" class="portfolio-item">
-                <img src="https://pub-e5ab79f76e6e4c32841ea6868cfdb1bd.r2.dev/Pagode.JPG" alt="Evento Vogue" class="portfolio-item">
-                <img src="https://pub-e5ab79f76e6e4c32841ea6868cfdb1bd.r2.dev/VovoJames.png" alt="Público em Show Noturno" class="portfolio-item">
-                <img src="https://pub-e5ab79f76e6e4c32841ea6868cfdb1bd.r2.dev/Beats.png" alt="Instalação de Arte Digital" class="portfolio-item">
+                <div class="portfolio-card">
+                    <img src="assets/portfolio/CiaMrMonkey.PNG" alt="Evento Itaú" class="portfolio-item">
+                    <div class="portfolio-overlay">
+                        <p class="portfolio-name">CIA</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="assets/portfolio/CiaNazar.PNG" alt="Show Musical" class="portfolio-item">
+                    <div class="portfolio-overlay">
+                        <p class="portfolio-name">NAZAR</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="assets/portfolio/NazarXMacaubaAfterMovie.PNG" alt="Evento Vogue" class="portfolio-item">
+                    <div class="portfolio-overlay">
+                        <p class="portfolio-name">DJ</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="assets/portfolio/VovoJames.png" alt="Público em Show Noturno" class="portfolio-item">
+                    <div class="portfolio-overlay">
+                        <p class="portfolio-name">VOVÔ JAMES</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="assets/portfolio/Hungria.JPG" alt="Instalação de Arte Digital" class="portfolio-item">
+                    <div class="portfolio-overlay">
+                        <p class="portfolio-name">HUNGRIA</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -585,14 +557,14 @@
                     <div class="clients-logos">
                         <h3>Clientes que confiam em nosso trabalho</h3>
                         <div class="logos-grid">
-                            <img src="assets/Logos-Parceiros-Cervo/O-boticario-logo.png" alt="O Boticário" loading="lazy" class="partner-logo partner-logo--boticario">
+                            <img class="logoBoticario" src="assets/Logos-Parceiros-Cervo/O-boticario-logo.png" alt="O Boticário" loading="lazy" class="partner-logo partner-logo--boticario">
                             <img src="assets/Logos-Parceiros-Cervo/Sebrea-logo.png" alt="Sebrae" loading="lazy" class="partner-logo">
                             <img src="assets/Logos-Parceiros-Cervo/hering-logo.png" alt="Hering" loading="lazy" class="partner-logo">
-                            <img src="assets/Logos-Parceiros-Cervo/Flor-do-cafe-logo.PNG" alt="Flor do Café" loading="lazy" class="partner-logo">
-                            <img src="assets/Logos-Parceiros-Cervo/Difusora98-Logo.png" alt="Difusora 98" loading="lazy" class="partner-logo">
-                            <img src="assets/Logos-Parceiros-Cervo/CaminhosCerrado-logo.png" alt="Caminhos do Cerrado" loading="lazy" class="partner-logo">
+                            <img class="logoFlorDoCafe" src="assets/Logos-Parceiros-Cervo/Flor-do-cafe-logo.PNG" alt="Flor do Café" loading="lazy" class="partner-logo">
+                            <img class="logoDifusora98" src="assets/Logos-Parceiros-Cervo/Difusora98-Logo.png" alt="Difusora 98" loading="lazy" class="partner-logo">
+                            <img class="logoCaminhosCerrado" src="assets/Logos-Parceiros-Cervo/CaminhosCerrado-logo.png" alt="Caminhos do Cerrado" loading="lazy" class="partner-logo">
                             <img src="assets/Logos-Parceiros-Cervo/farmacianacional_logo.png" alt="Farmácia Nacional" loading="lazy" class="partner-logo">
-                            <img src="assets/Logos-Parceiros-Cervo/Saroba-truck.png" alt="Sarobá" loading="lazy" class="partner-logo">
+                            <img class="logoSaroba" src="assets/Logos-Parceiros-Cervo/Saroba-truck.png" alt="Sarobá" loading="lazy" class="partner-logo">
                         </div>
                     </div>
 
@@ -669,7 +641,7 @@
                                         </div>
                                         <blockquote class="rv__text">"Trabalhar com essa equipe foi uma experiência incrível. Ficou claro o cuidado e o profissionalismo em cada detalhe. Captaram a essência do nosso trabalho. O resultado superou nossas expectativas. Recomendo de olhos fechados."</blockquote>
                                         <div class="rv__author">
-                                            <img src="assets/team/Walisson-Nobre.JPG" alt="Chef Gabi Tropicana" class="rv__avatar" loading="lazy">
+                                            <img src="assets/avaliacoes/chefe-gabi.JPEG" alt="Chef Gabi Tropicana" class="rv__avatar" loading="lazy">
                                             <div class="rv__info">
                                                 <span class="rv__name">Chef Gabi Tropicana</span>
                                                 <span class="rv__role">Embaixadora da Gastronomia do Cerrado</span>
@@ -711,9 +683,9 @@
             <div class="container">
                 <div class="cta-content">
                     <div class="cta-tag">VAMOS CONVERSAR</div>
-                    <h2 class="cta-title">Seu Evento Merece <span>um Padrão Mais Alto</span></h2>
+                    <h2 class="cta-title">Seu Evento Merece <br> <span>um Padrão Mais Alto</span></h2>
                     <p class="cta-subtitle">
-                        Transforme momentos em narrativas cinematográficas inesquecíveis. Entre em contato e descubra como podemos elevar
+                        Transforme momentos em narrativas cinematográficas inesquecíveis.<br>Entre em contato e descubra como podemos elevar
                         sua produção.
                     </p>
                     <div class="cta-actions">
@@ -732,31 +704,10 @@
                             </svg>
                             Enviar E-mail
                         </a>
+                        
                     </div>
 
-                    <div class="cta-footer">
-                        <a href="https://wa.me/5534984095625" target="_blank" class="cta-footer-item" aria-label="Telefone">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.05a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z" />
-                            </svg>
-                            (34) 98409 - 5625
-                        </a>
-                        <a href="contato.html" class="cta-footer-item" aria-label="E-mail">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16v16H4z" />
-                                <path d="m22 6-10 7L2 6" />
-                            </svg>
-                            contato@cervofilms.com
-                        </a>
-                        <a href="https://www.instagram.com/cervofilms/" target="_blank" class="cta-footer-item" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <path d="M17.5 6.5h.01" />
-                            </svg>
-                            @cervofilms
-                        </a>
-                    </div>
+                   
                 </div>
             </div>
             
@@ -773,7 +724,7 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contato</h4>
-                    <p>contato@cervofilms.com</p>
+                    <p>cervofilms@cervofilm.com</p>
                     <p>+55 98409-5625</p>
                 </div>
                 <div class="footer-social">
