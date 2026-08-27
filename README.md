@@ -1,200 +1,312 @@
-# Cervo Films - Site Institucional Premium
+# Cervo Films - Site Oficial
 
-Um site institucional minimalista e cinematográfico para a produtora audiovisual Cervo Films.
+Site oficial da Cervo Films, empresa de produção audiovisual premium que transforma eventos em experiências cinematográficas.
 
-## 🎯 Objetivo
+## 🎬 Sobre o Projeto
 
-Transmitir profissionalismo, elegância, criatividade e alta qualidade para produtores de eventos, empresários e empresas com alto nível de exigência.
+A Cervo Films é uma empresa de produção audiovisual com mais de 4 anos de mercado, especializada em transformar eventos e marcas em narrativas cinematográficas memoráveis. Este site showcase apresenta seus serviços, portfólio de trabalhos e informações de contato de forma moderna e impactante.
 
-## 🚀 Características
+### Características
 
-- **Design Minimalista**: Estética inspirada em sand.black com fundo escuro
-- **Cinematográfico**: Hero section com vídeo em loop
-- **Responsivo**: Adaptado para todos dispositivos
-- **Performance**: Otimizado para carregamento rápido
-- **Acessível**: Semântica HTML5 e navegação por teclado
+- **Design Cinematográfico**: Interface escura premium inspirada em cinema
+- **Responsivo**: Otimizado para desktop, tablet e mobile
+- **Vídeos em Background**: Integração com Vimeo Player API
+- **Portfólio Dinâmico**: Sistema de projetos com página de detalhes individual
+- **Formulário de Contato**: Integração com FormSubmit
+- **Animações**: Efeitos de scroll e interações suaves
+- **Acessibilidade**: Estrutura semântica e atributos ARIA
+
+## 🚀 Tecnologias Utilizadas
+
+### Frontend
+- **HTML5**: Estrutura semântica e acessível
+- **CSS3**: Estilização moderna com variáveis CSS
+- **JavaScript (ES6+)**: Funcionalidades interativas com modules
+- **Vimeo Player API**: Integração de vídeos em background
+- **FormSubmit**: Processamento de formulários de contato
+
+### Design
+- **Montserrat**: Fonte tipográfica (Google Fonts)
+- **CSS Modules**: Organização modular de estilos
+- **CSS Grid & Flexbox**: Layout responsivo
+- **CSS Variables**: Sistema de design consistente
+- **Glass Morphism**: Efeitos de vidro e transparência
 
 ## 📁 Estrutura do Projeto
 
 ```
-PrjCervoFilms/
-├── index.html          # Estrutura principal do site
-├── styles.css          # Estilos e design responsivo
-├── script.js           # Animações e interatividade
-├── assets/             # Pasta para mídias
-│   ├── hero-video.mp4  # Vídeo do hero (placeholder)
-│   ├── portfolio1.mp4  # Vídeo portfólio 1 (placeholder)
-│   ├── portfolio2.mp4  # Vídeo portfólio 2 (placeholder)
-│   ├── portfolio3.mp4  # Vídeo portfólio 3 (placeholder)
-│   ├── portfolio1.jpg  # Imagem portfólio 1 (placeholder)
-│   ├── portfolio2.jpg  # Imagem portfólio 2 (placeholder)
-│   └── portfolio3.jpg  # Imagem portfólio 3 (placeholder)
-└── README.md           # Este arquivo
+SiteCervoFilms/
+├── index.html                    # Página principal
+├── portfolio-project.html        # Página de detalhes de projetos
+├── contato.html                  # Página de contato
+├── politica-de-privacidade.html  # Política de privacidade
+├── politica-de-cookies.html      # Política de cookies
+├── styles.css                    # CSS principal (imports)
+├── css/
+│   ├── root_reset/              # Reset e variáveis globais
+│   │   ├── reset_globalTags.css
+│   │   ├── tipography.css
+│   │   └── variables.css
+│   ├── components/              # Componentes reutilizáveis
+│   │   ├── header.css
+│   │   ├── buttons.css
+│   │   └── footer.css
+│   ├── PageSectioms/            # Estilos por página/seção
+│   │   ├── contatoPage/
+│   │   │   └── contato.css
+│   │   └── indexPage/
+│   │       ├── hero.css
+│   │       ├── cinemaStrip.css
+│   │       ├── about.css
+│   │       ├── services.css
+│   │       ├── team.css
+│   │       ├── portfolio.css
+│   │       ├── diferentials.css
+│   │       ├── socialProof.css
+│   │       └── finalCTA.css
+│   ├── portfolio-project.css    # Estilos específicos de projetos
+│   ├── project-enhancements.css # Melhorias de projetos
+│   └── utilities.css            # Classes utilitárias
+└── js/
+    ├── projects-data.js         # Dados dos projetos (portfólio)
+    ├── project-page.js          # Lógica da página de projetos
+    ├── contact-form.js          # Lógica do formulário de contato
+    ├── indexPage/
+    │   ├── main.js              # Script principal da home
+    │   ├── animation_effects/   # Animações e efeitos
+    │   │   ├── animations.js
+    │   │   ├── counters.js
+    │   │   ├── equipment.js
+    │   │   ├── navigation.js
+    │   │   ├── reviews.js
+    │   │   └── slider.js
+    │   └── utils/               # Utilitários
+    │       ├── aboutVIdeo.js
+    │       ├── services.js
+    │       ├── utils.js
+    │       └── videoManager.js
+    └── utils/
+        └── intersection-observer.js # Observer para animações
 ```
 
-## 🎬 Mídias Necessárias
+## 🎯 Funcionalidades Principais
 
-### Vídeos (Formato MP4, Otimizados para Web)
+### 1. **Hero Section**
+- Vídeo de fundo automático (desktop e mobile)
+- Overlay escuro para legibilidade
+- Texto principal com CTA
+- Logo da marca destacada
 
-1. **hero-video.mp4** - Vídeo cinematográfico em loop (15-30 segundos)
-   - Dimensão: 1920x1080
-   - Duração: 15-30 segundos em loop
-   - Estilo: Cinematográfico, eventos premium
+### 2. **Seção Sobre**
+- Vídeo de background independente
+- Cards com glass morphism
+- Estatísticas animadas (+4 anos, +200 coberturas, 24h entrega)
+- Scroll indicator animado
 
-2. **portfolio1.mp4** - Evento Corporativo
-   - Dimensão: 1920x1080
-   - Duração: 10-15 segundos
-   - Conteúdo: Real Time + After Movie
+### 3. **Cinema Strip**
+- Faixa de filme cinematográfica decorativa
+- Clapper board animado
+- Elementos visuais temáticos
 
-3. **portfolio2.mp4** - Comercial Premium
-   - Dimensão: 1920x1080
-   - Duração: 10-15 segundos
-   - Conteúdo: Produção Completa
+### 4. **Serviços**
+- Cards de serviços interativos
+- Efeito expand/collapse
+- Ícones e descrições detalhadas
+- Hover effects
 
-4. **portfolio3.mp4** - Vídeo Institucional
-   - Dimensão: 1920x1080
-   - Duração: 10-15 segundos
-   - Conteúdo: Branding Estratégico
+### 5. **Portfólio**
+- Grid de projetos responsivo
+- Cards com efeito grayscale e hover
+- Integração com dados dinâmicos (projects-data.js)
+- Links para páginas de detalhes individuais
 
-### Imens (Formato JPG, Alta Qualidade)
+### 6. **Página de Projeto**
+- Mockup de dispositivo (vertical/horizontal)
+- Galeria de imagens com drag & dots
+- Vídeo incorporado do Vimeo
+- Seção de detalhes (serviços, tecnologias)
+- Projetos relacionados com algoritmo de recomendação
+- Auto-play da galeria
 
-1. **portfolio1.jpg** - Fotografia Profissional
-   - Dimensão: 1920x1080
-   - Conteúdo: Ensaios Corporativos
+### 7. **Depoimentos**
+- Carrossel de reviews
+- Animações de entrada
+- Navegação por setas
+- Design elegante
 
-2. **portfolio2.jpg** - Cobertura de Evento
-   - Dimensão: 1920x1080
-   - Conteúdo: Stories + Conteúdo
+### 8. **Equipe**
+- Cards de membros da equipe
+- Efeitos de hover
+- Fotos e cargos
 
-3. **portfolio3.jpg** - Produção Audiovisual
-   - Dimensão: 1920x1080
-   - Conteúdo: Posts + Design
+### 9. **Diferenciais**
+- Grid de diferenciais
+- Ícones e descrições
+- Animações de scroll
 
-## 🎨 Design System
+### 10. **CTA Final**
+- Call-to-action impactante
+- Botões de ação
+- Design cinematográfico
+
+### 11. **Formulário de Contato**
+- Validação de campos
+- Integração com FormSubmit
+- Feedback visual de sucesso
+- Animação de confete
+
+### 12. **Footer**
+- Informações de contato
+- Links sociais
+- Desenvolvedor creditado
+- Copyright
+
+### 13. **Políticas**
+- Política de privacidade (LGPD compliant)
+- Política de cookies
+- Design consistente com o site
+
+## 🎨 Sistema de Design
 
 ### Cores
-- **Background**: #0a0a0a (Preto profundo)
-- **Surface**: #1a1a1a (Cinza escuro)
-- **Primary**: #ffffff (Branco)
-- **Accent**: #ff6b35 (Laranja vibrante)
-- **Text Muted**: #b0b0b0 (Cinza médio)
+```css
+--color-primary: #ffffff
+--color-secondary: #f5f5f5
+--color-background: #000000
+--color-surface: #0a0a0a
+--color-text: #ffffff
+--color-text-muted: #888888
+```
 
 ### Tipografia
-- **Fonte Principal**: Inter (Google Fonts)
-- **Pesos**: 300, 400, 500, 600, 700, 900
+- **Fonte**: Montserrat (Google Fonts)
+- **Pesos**: 300, 400, 500, 600, 700, 800, 900
+- **Tamanhos**: Sistema escalável de xs a 4xl
 
 ### Espaçamento
-- **XS**: 0.5rem
-- **SM**: 1rem
-- **MD**: 2rem
-- **LG**: 3rem
-- **XL**: 4rem
-- **XXL**: 6rem
+- Sistema consistente de xs (0.5rem) a xxl (6rem)
+- Grid e gaps padronizados
 
-## ⚡ Funcionalidades
-
-### Navegação
-- Menu responsivo com toggle mobile
-- Scroll suave entre seções
-- Header com efeito blur ao rolar
-- Destaque de seção ativa
-
-### Animações
-- Fade-in no scroll
-- Parallax no hero
-- Hover effects nos cards
-- Counter animation para números
-- Video play/pause no hover do portfólio
-
-### Interatividade
-- Lightbox para portfólio
-- Menu mobile animado
-- Botão WhatsApp direto
-- Form validation (se necessário)
-
-## 🛠 Tecnologias
-
-- **HTML5**: Semântico e acessível
-- **CSS3**: Moderno com variáveis customizadas
-- **JavaScript ES6+**: Vanilla JS, sem frameworks
-- **Google Fonts**: Inter para tipografia
+### Efeitos
+- Glass morphism (backdrop-filter)
+- Transições suaves (0.2s - 0.5s)
+- Sombras profundas para depth
+- Animações de entrada (fadeInUp)
 
 ## 📱 Responsividade
 
-- **Desktop**: 1200px+
-- **Tablet**: 768px - 1199px
+O site é totalmente responsivo com breakpoints em:
 - **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
 
-## 🚀 Otimização
+## 🔧 Como Usar
 
-- Lazy loading para imagens
-- Throttling em eventos scroll
-- Intersection Observer para animações
-- Vídeos otimizados para web
-- CSS e JS minificados (produção)
+### Desenvolvimento Local
+
+1. Clone o repositório
+2. Abra o arquivo `index.html` diretamente no navegador
+3. Não requer build process ou servidor de desenvolvimento
+
+### Adicionar Novo Projeto ao Portfólio
+
+1. Edite `js/projects-data.js`
+2. Adicione um novo objeto ao `PROJECTS`:
+```javascript
+novo-projeto: {
+  id: "novo-projeto",
+  gallery: ["url1.jpg", "url2.jpg", ...],
+  title: "Título do Projeto",
+  subtitle: "Subtítulo",
+  category: "Categoria",
+  duration: "duração",
+  videoOrientation: "vertical", // ou "horizontal"
+  videoSrc: "url-do-video-vimeo",
+  about: "Descrição do projeto",
+  services: ["serviço1", "serviço2"],
+  tech: ["tecnologia1", "tecnologia2"],
+  cta: {
+    title: "Título CTA",
+    description: "Descrição CTA"
+  },
+  related: ["projeto1", "projeto2"]
+}
+```
+
+3. Adicione o card correspondente no `index.html` na seção de portfólio
+
+### Personalizar Vídeos
+
+Os vídeos são configurados nos arquivos HTML correspondentes:
+- Hero: `index.html` (linhas 55-60)
+- Sobre: `index.html` (linhas 92-107)
+- Projetos: Via `projects-data.js`
+
+### Configurar Formulário
+
+O formulário usa FormSubmit:
+- E-mail de destino: `cervofilmsoficial@gmail.com`
+- Configuração em `contato.html` (linha 52)
+
+## 🌐 Integrações
+
+### Vimeo Player API
+- Vídeos em background (hero e sobre)
+- Vídeos de projetos
+- Auto-play, loop, muted
+- Controles personalizados
+
+### FormSubmit
+- Processamento de formulários
+- Validação e feedback
+- Envio direto para e-mail
+
+### Google Fonts
+- Montserrat via CDN
+- Múltiplos pesos para versatilidade
+
+## 📊 Performance
+
+- **Lazy Loading**: Imagens com atributo `loading="lazy"`
+- **CSS Ot timizado**: Módulos e imports eficientes
+- **JavaScript Modular**: ES6 modules para carregamento sob demanda
+- **Vimeo API**: Carregamento sob demanda quando necessário
+
+## ♿ Acessibilidade
+
+- Estrutura semântica HTML5
+- Atributos ARIA em elementos interativos
+- Labels descritivos em formulários
+- Contraste adequado de cores
+- Navegação por teclado suportada
+
+## 📄 Licença
+
+© 2024 Cervo Films. Todos os direitos reservados.
+
+Desenvolvido por [DevWeb](https://www.getdevweb.com.br)
 
 ## 📞 Contato
 
-Para atualizar as informações de contato:
+- **E-mail**: cervofilmsoficial@gmail.com
+- **WhatsApp**: +55 (34) 98409-5625
+- **Instagram**: [@cervofilms](https://www.instagram.com/cervofilms/)
 
-1. **HTML**: Atualizar footer section
-2. **WhatsApp**: Substituir número no CTA final
-3. **Email**: Atualizar link no footer
+## 🛠️ Manutenção
 
-## 🔄 Personalização
+### Atualizar Conteúdo
+- Textos: Editar diretamente nos arquivos HTML
+- Imagens: Substituir URLs nos arquivos correspondentes
+- Projetos: Editar `js/projects-data.js`
 
-### Cores
-Editar variáveis CSS em `:root` no arquivo `styles.css`:
+### Atualizar Estilos
+- Variáveis globais: `css/root_reset/variables.css`
+- Componentes: `css/components/`
+- Páginas específicas: `css/PageSectioms/`
 
-```css
-:root {
-    --color-accent: #ff6b35; /* Cor principal */
-    --color-background: #0a0a0a; /* Fundo */
-    /* ... */
-}
-```
-
-### Tipografia
-Alterar font-family no CSS:
-
-```css
-:root {
-    --font-primary: 'SuaFont', sans-serif;
-}
-```
-
-### Conteúdo
-Editar textos diretamente no HTML ou criar um sistema de CMS.
-
-## 🌐 Deploy
-
-### Para produção:
-1. Minificar CSS e JS
-2. Otimizar imagens e vídeos
-3. Configurar CDN para mídias
-4. Implementar analytics
-5. Configurar SEO meta tags
-
-### Hospedagem recomendada:
-- Vercel, Netlify (estático)
-- GitHub Pages (grátis)
-- Servidor próprio (PHP/Node)
-
-## 📈 Performance
-
-- **Lighthouse Score**: 90+ (com mídias otimizadas)
-- **Core Web Vitals**: Otimizado
-- **SEO**: Semântico e meta tags
-- **Acessibilidade**: WCAG 2.1 AA
-
-## 🎯 Próximos Passos
-
-1. Adicionar mídias reais na pasta `/assets`
-2. Configurar número de WhatsApp real
-3. Adicionar formulário de contato
-4. Implementar sistema de blog (opcional)
-5. Adicionar analytics e tracking
+### Atualizar Scripts
+- Lógica principal: `js/indexPage/main.js`
+- Animações: `js/indexPage/animation_effects/`
+- Utilitários: `js/indexPage/utils/`
 
 ---
-
-**Desenvolvido com ❤️ para Cervo Films**
